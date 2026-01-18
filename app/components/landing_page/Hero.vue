@@ -34,14 +34,6 @@
 
 
    
-       <button class="absolute left-[795px] top-[364px] bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[10px] py-[20px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
-        Commencez maintenant
-      </button>
-
-
-       <button class="absolute left-[495px] top-[364px]   px-[10px] py-[20px]  text-[#333333] rounded-[10px] font-medium border border-gray-300">
-        Chargez plus d'activités
-      </button>
 
   </div>
 </template>
