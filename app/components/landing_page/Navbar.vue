@@ -56,7 +56,9 @@
   
     <NuxtLink 
       to="/activites"
-      class="absolute left-[570px] top-[380px] w-[254px] h-[50px] z-20 flex items-center justify-center rounded-[10px] font-medium border border-gray-300 text-[#333333] bg-white transition-all duration-300 hover:bg-[#333333] hover:text-white"
+      class="absolute left-[570px] top-[380px] w-[254px] h-[50px] z-20 flex items-center justify-center rounded-[10px] 
+      font-medium border border-gray-300 text-[#333333] 
+      bg-white transition-all duration-300 hover:bg-[#333333] hover:text-white"
     >
       Chargez plus d'activités
     </NuxtLink>
