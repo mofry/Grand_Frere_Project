@@ -12,7 +12,8 @@
              shadow-lg"
       alt="Carte Grand Frère"
     />
-  </div>
+    
+    </div>
 
    <div class="relative w-full h-[1000px] overflow-hidden"> <img 
       src="/images/Rectangle-140.png" 

@@ -1,14 +1,15 @@
+<script setup lang="ts">
+// Pas besoin d'importer les composants, Nuxt le fait pour toi !
+</script>
+
 <template>
-  <main>
-    <LandingHero />
+  <div class="landing-page">
 
-    <section id="presentation" class="min-h-screen py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center">La meilleure carte jamais créée</h2>
-        </div>
-    </section>
+    <LandingPageNavbar />
+    <LandingPageLaCarte />
 
-    <section id="avantages" class="py-20 bg-[#FAF7F2]">
-      </section>
-  </main>
+
+
+   
+  </div>
 </template>

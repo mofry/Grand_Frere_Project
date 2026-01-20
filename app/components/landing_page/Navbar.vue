@@ -1,5 +1,10 @@
 <template>
-  <div class="relative min-h-screen">
+
+
+
+
+    
+  <div class="relative min-h-screen ">
     <nav class="p-6 bg-white flex justify-between items-center shadow-sm relative z-50">
       <div class="font-bold text-xl text-orange-600">GRAND FRÈRE</div>
       
@@ -45,7 +50,8 @@
         les parents et encadre les élèves
       </div>
       <p class="mt-6 text-[16px] text-[#333333] font-normal text-center max-w-[600px] leading-relaxed">
-        Contrôlez et sécurisez le budget repas de vos enfants, directement au sein <br/>
+        Contrôlez et sécurisez le budget repas de vos enfants, 
+        directement au sein
         des établissements en réduisant les risques de dépenses superflues.
       </p>
 
