@@ -7,6 +7,8 @@
 
     <LandingPageNavbar />
     <LandingPageLaCarte />
+    <LandingPageVideo />
+
 
 
 

@@ -50,6 +50,87 @@
       Commencez maintenant
     </NuxtLink>
 
+
+
+
+
+    <div class = "flex justify-center space-x-4 flex flex-row">
+
+      <div class = "
+        
+        
+        bg-gradient-to-b from-white to-gray-100 
+        shadow-[inset_0_0_30px_rgba(0,0,0,0.02)]
+        box-content h-32 w-32
+        px-10 py-10
+        rounded-xl
+        border border-gray-300
+        bg-white-500
+
+        shadow-2xl
+        border-opacity-500">
+        <p>
+            Normalemen il doit </br>
+            y avoir du texte ici
+        </p>
+      </div>
+
+      <div class = "
+    
+        box-content h-32 w-32
+        px-10 py-10
+        rounded-xl
+        border border-gray-300
+        bg-white-500
+
+        shadow-2xl
+        border-opacity-500">
+        <p>
+            Normalemen il doit </br>
+            y avoir du texte ici
+        </p>
+      </div>
+
+
+      <div class = "
+    
+        box-content h-32 w-32
+        px-10 py-10
+        rounded-xl
+        border border-gray-300
+        bg-white-500
+
+        shadow-2xl
+        border-opacity-500">
+        <p>
+            Normalemen il doit </br>
+            y avoir du texte ici
+        </p>
+      </div>
+
+
+      <div class = "
+    
+        box-content h-32 w-32
+        px-10 py-10
+        rounded-xl
+        border border-gray-300
+        bg-white-500
+
+        shadow-2xl
+        border-opacity-500">
+        <p>
+            Normalemen il doit </br>
+            y avoir du texte ici
+        </p>
+      </div>
+
+
+
+
+    </div>
+    
+
     
       
 
