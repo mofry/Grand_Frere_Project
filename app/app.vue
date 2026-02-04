@@ -1,5 +1,5 @@
 <template>
-  <div class="relative min-h-screen">
+  <div class="min-h-screen w-full bg-white pb-20">
     
     
 
@@ -24,3 +24,11 @@
     margin: 0; /* Bon réflexe pour éviter les marges blanches par défaut */
   }
 </style>
+
+
+
+
+
+
+
+

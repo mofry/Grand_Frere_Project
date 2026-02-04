@@ -5,9 +5,18 @@
 <template>
   <div class="landing-page">
 
+
+
+
     <LandingPageNavbar />
     <LandingPageLaCarte />
     <LandingPageVideo />
+    <LandingPageDiscovery />
+    <LandingPageRecharge />
+    <LandingPageEcoles />
+    <LandingPageParents />
+    <LandingPageFournisseurs />
+
 
 
 
