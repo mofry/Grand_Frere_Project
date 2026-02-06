@@ -1,70 +1,75 @@
 <template>
-  <div class="min-h-screen w-full bg-white py-20 px-6 font-nirmala">
+  <div class="min-h-screen w-full bg-white py-16 px-6 font-sans overflow-hidden">
     
-    <div class="max-w-5xl mx-auto">
-
-      <div class="text-center mb-20 space-y-6">
-        <h2 class="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center mb-16 md:mb-24">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-[#333] mb-2">
           Rechargez, contrôlez, encadrez.
         </h2>
-        <h3 class="text-2xl md:text-4xl font-bold text-[#bf8c2c] leading-tight">
-          L'application qui transforme le budget <br>
+        <h3 class="text-2xl md:text-4xl font-bold text-[#b8860b] leading-tight">
+          L'application qui transforme le budget<br class="hidden md:block">
           repas en expérience maîtrisée.
         </h3>
       </div>
 
-      <div class="max-w-3xl mx-auto flex flex-col gap-50">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-        <div class="group flex items-start gap-6 cursor-pointer p-4 rounded-2xl hover:bg-gray-50 transition-colors duration-300">
-          <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-[#d97706] to-[#a21caf] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-9 h-9">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-            </svg>
+        <div class="relative flex items-center justify-center h-[400px] md:h-[500px]">
+          <div class="relative z-20 transform translate-x-10 md:translate-x-20">
+            <img src="/images/Page_recharge/telephone.png" alt="Smartphone" class="w-[200px] md:w-[280px] drop-shadow-2xl">
           </div>
-          <div class="pt-2">
-            <h4 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Fonctionnalité 1</h4>
-            <p class="text-gray-600 leading-relaxed text-base">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
-            </p>
+
+          <div class="absolute z-10 transform -translate-x-16 -translate-y-24 md:-translate-x-28 md:-translate-y-32 -rotate-12">
+            <img src="/images/Page_recharge/carte_orange.png" alt="Carte Orange" class="w-[180px] md:w-[260px] drop-shadow-xl">
+          </div>
+
+          <div class="absolute z-30 transform -translate-x-12 translate-y-20 md:-translate-x-20 md:translate-y-28 rotate-6">
+            <img src="/images/Page_recharge/Luffy_violet.png" alt="Carte Luffy" class="w-[220px] md:w-[320px] drop-shadow-2xl">
           </div>
         </div>
 
-        <div class="group flex items-start gap-6 cursor-pointer p-4 rounded-2xl hover:bg-gray-50 transition-colors duration-300">
-          <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-[#d97706] to-[#a21caf] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-9 h-9">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+        <div class="flex flex-col gap-10">
+          
+          <div v-for="(item, index) in features" :key="index" class="flex items-start gap-5">
+            <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-[#d98b3a] to-[#9b4d8d] flex items-center justify-center shadow-md">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-8 h-8">
+                <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.14 6.337.408 1.921.245 3.413 1.913 3.413 3.845v10.235c0 1.932-1.492 3.6-3.413 3.845-2.075.27-4.19.408-6.337.408-2.147 0-4.262-.14-6.337-.408C2.992 20.538 1.5 18.87 1.5 16.938V6.503c0-1.932 1.5-3.6 3.413-3.845zM9 13a1 1 0 100-2 1 1 0 000 2zm4-1a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-gray-800 mb-1">{{ item.title }}</h4>
+              <p class="text-gray-600 leading-snug max-w-md">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+              </p>
+            </div>
           </div>
-          <div class="pt-2">
-            <h4 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Gérer son budget</h4>
-            <p class="text-gray-600 leading-relaxed text-base">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
-            </p>
-          </div>
-        </div>
 
-        <div class="group flex items-start gap-6 cursor-pointer p-4 rounded-2xl hover:bg-gray-50 transition-colors duration-300">
-          <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-[#d97706] to-[#a21caf] flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-9 h-9">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-            </svg>
-          </div>
-          <div class="pt-2">
-            <h4 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Paiement Sécurisé</h4>
-            <p class="text-gray-600 leading-relaxed text-base">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div>
         </div>
-
       </div>
 
       <div class="flex justify-center mt-20">
-        <button class="px-10 py-4 rounded-xl border border-gray-300 text-gray-800 font-bold hover:bg-gray-800 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm">
-          Téléchargez l'app
+        <button class="px-8 py-3 rounded-xl border border-gray-400 text-gray-700 font-semibold hover:bg-gray-100 transition-colors shadow-sm">
+          Chargez plus d'activités
         </button>
       </div>
 
     </div>
   </div>
 </template>
+
+<script setup>
+const features = [
+  { title: "Fonctionnalité 1" },
+  { title: "Gérer son budget" },
+  { title: "Paiement" }
+]
+</script>
+
+<style scoped>
+/* Ajout d'une police proche de celle de l'image si nécessaire */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+</style>

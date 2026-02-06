@@ -16,6 +16,7 @@
     <LandingPageEcoles />
     <LandingPageParents />
     <LandingPageFournisseurs />
+    <LandingPageAPropos />
 
 
 
