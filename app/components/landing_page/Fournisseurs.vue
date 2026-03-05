@@ -11,7 +11,7 @@
   </div>
 
   <div class="max-w-4xl mx-auto flex flex-col items-center text-center relative z-10">
-
+    
     <div class="w-fit px-6 py-1.5 rounded-lg border border-pink-200/20 bg-pink-100 text-gray-900 font-bold text-lg mb-10 shadow-[0_0_15px_rgba(252,231,243,0.3)]">
       Fournisseurs
     </div>
@@ -28,9 +28,9 @@
       veniam,odo Ut enim ad minim veniam, quis nostrud
     </p>
 
-    <button class="px-10 py-4 rounded-2xl border border-white/30 text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm">
+    <Nuxtlink to ="/fournisseur2" class="px-10 py-4 rounded-2xl border border-white/30 text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm">
       Devenir Fournisseur
-    </button>
+    </Nuxtlink>
 
   </div>
 </section>

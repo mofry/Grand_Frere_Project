@@ -17,6 +17,7 @@
     <LandingPageParents />
     <LandingPageFournisseurs />
     <LandingPageAPropos />
+    <LandingPageFooter />
 
 
 

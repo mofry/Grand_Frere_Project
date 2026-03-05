@@ -96,9 +96,9 @@ const handleSubmit = () => {
           </div>
 
           <div class="flex justify-center">
-            <button class="bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold py-4 px-20 rounded-xl shadow-lg hover:scale-105 transition-transform">
+            <NuxtLink to ="/formulaire2" class="bg-gradient-to-r from-orange-400 to-pink-500 text-white font-bold py-4 px-20 rounded-xl shadow-lg hover:scale-105 transition-transform">
               Envoyer
-            </button>
+            </NuxtLink>
           </div>
         </form>
       </div>

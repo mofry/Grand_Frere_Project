@@ -101,9 +101,9 @@
           </div>
 
           <div class="flex justify-center pt-6">
-            <button class="bg-gradient-to-r from-[#EBB143] to-[#B06AB3] text-white px-12 py-3 rounded-xl font-bold text-sm shadow-lg hover:opacity-90 transition-opacity">
+            <NuxtLink to ="/formulaire5" class="bg-gradient-to-r from-[#EBB143] to-[#B06AB3] text-white px-12 py-3 rounded-xl font-bold text-sm shadow-lg hover:opacity-90 transition-opacity">
               Envoyer
-            </button>
+            </NuxtLink>
           </div>
         </form>
       </div>

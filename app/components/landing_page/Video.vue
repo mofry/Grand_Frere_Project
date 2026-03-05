@@ -3,7 +3,7 @@
   
   <h1 class="text-4xl font-bold text-left">
     La carte 
-    <img src="/images/Page_vidéo1/logo_grand_frere.png" alt="Piece" class=" left-1 inline-block w-80 h-auto align-middle ml-2">
+    <img src="/images/Page_vidéo1/logo_complet.png" alt="Piece" class=" left-1 inline-block w-80 h-auto align-middle ml-2">
     <br />
     comment ça fonctionne ?
   </h1>

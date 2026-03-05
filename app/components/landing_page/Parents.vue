@@ -41,7 +41,7 @@
               Voir la liste des écoles Partenaires
             </button>
             <button class="px-8 py-3.5 rounded-xl border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">
-              Chargez plus d'activités
+              Téléchargez l'application
             </button>
           </div>
         </div>

@@ -24,7 +24,7 @@
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
 
-        <NuxtLink to="/Commencez" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-8 py-3 rounded-xl text-white font-bold shadow-lg shadow-orange-900/30 hover:opacity-90 transition-all">
+        <NuxtLink to="/discovery" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-8 py-3 rounded-xl text-white font-bold shadow-lg shadow-orange-900/30 hover:opacity-90 transition-all">
           Découvrir des histoires
         </NuxtLink>
       </div>

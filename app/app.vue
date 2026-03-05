@@ -12,7 +12,7 @@
   /* Tes polices globales */
   @font-face {
     font-family: 'NirmanaText';
-    src: url('/fonts/Nirmana-Text.otf') format('opentype');
+    src: url('/fonts/Nirmala-Text.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

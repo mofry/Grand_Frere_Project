@@ -14,7 +14,7 @@
 
 
 
-            <div class = "bg-gray-200/50  px-28 py-36 shadow-2xl rounded-2xl mx-auto my-auto " >
+            <NuxtLink to ="/repertoire_ecoles" class = "bg-gray-200/50  px-28 py-36 shadow-2xl rounded-2xl mx-auto my-auto " >
 
                 <img src="/images/Pages_commencez_maintenant/school.svg" class="w-full h-full opacity-100" alt="Icone utilisateur"  />
 
@@ -22,9 +22,9 @@
                     <h2>Ecoles</h2>
                 </span>
 
-            </div>
+            </NuxtLink>
 
-            <div class = "bg-gray-200/50  px-28 py-36 shadow-2xl rounded-2xl " >
+            <NuxtLink to = "/formulaire1" class = "bg-gray-200/50  px-28 py-36 shadow-2xl rounded-2xl " >
 
                 <img src="/images/Pages_commencez_maintenant/delivery.svg" class="w-full h-full" alt="Icone utilisateur" />
                 <span class ="flex justify-center font-bold"> 
@@ -32,14 +32,14 @@
                 </span>
 
 
-            </div>
+            </NuxtLink>
 
-            <div class = "bg-gray-200/50 px-28 py-36 shadow-2xl rounded-2xl " >
+            <NuxtLink to = "/repertoire_ecoles" class = "bg-gray-200/50 px-28 py-36 shadow-2xl rounded-2xl " >
                  <img src="/images/Pages_commencez_maintenant/parent.svg" class="w-full h-full" alt="Icone utilisateur" />
                 <span class ="flex justify-center font-bold"> 
                     <h2>Parents</h2>
                 </span>
-            </div>
+            </NuxtLink>
 
         </div>
 
