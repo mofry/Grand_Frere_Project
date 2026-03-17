@@ -126,8 +126,14 @@
 <script setup>
 import { ref } from 'vue'
 
-// --- DÉFINIS TON IMAGE UNIQUE ICI ---
-const imageUnique = '/images/Page_discovery/makeba3.png' // Laisse-moi juste insérer l'image !
+// DEFINITION DES IMAGES
+const img_makeba = '/images/Page_discovery/makeba3.png' // Laisse-moi juste insérer l'image !
+const img_basilique = '/images/Page_discovery/basilique_top.png' 
+const img_talou = '/images/Page_discovery/talou_top.png' 
+const img_sport = '/images/Page_discovery/sport.png' 
+const img_femmes = '/images/Page_discovery/femmes.png' 
+const img_soyinka = '/images/Page_discovery/soyinka_top.png' 
+const img_litterature = '/images/Page_discovery/litterature.png' 
 
 // Logique pour formater les nombres (ex: 5000 -> 5K)
 const formatNumber = (num) => {
@@ -150,19 +156,20 @@ const toggleLike = (story) => {
 
 // Les données des cartes
 const stories = ref([
-  { id: 1, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: imageUnique },
-  { id: 2, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: imageUnique },
-  { id: 3, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: imageUnique, customClass: 'ring-4 ring-purple-500 ring-offset-2' }, // J'ai ajouté l'effet de bordure comme sur l'image
-  { id: 4, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: imageUnique },
+  { id: 1, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba },
+  { id: 2, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou },
+  { id: 3, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2' }, // J'ai ajouté l'effet de bordure comme sur l'image
+  { id: 4, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique },
   
-  { id: 5, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 5000, hasLiked: false, views: '58K', image: imageUnique },
-  { id: 6, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 5000, hasLiked: false, views: '2.5K', image: imageUnique },
-  { id: 7, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 1000, hasLiked: false, views: '19K', image: imageUnique },
-  { id: 8, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: imageUnique },
+  { id: 5, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba },
+  { id: 6, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou },
+  { id: 7, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2' }, // J'ai ajouté l'effet de bordure comme sur l'image
+  { id: 8, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique },
 
-  { id: 9, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: imageUnique },
-  { id: 10, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: imageUnique },
-  { id: 11, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 5000, hasLiked: false, views: '14K', image: imageUnique },
-  { id: 12, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 5000, hasLiked: false, views: '140K', image: imageUnique },
+  { id: 9, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba },
+  { id: 10, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou },
+  { id: 11, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2' }, // J'ai ajouté l'effet de bordure comme sur l'image
+  { id: 12, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique },
+  
 ])
 </script>

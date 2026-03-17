@@ -1,15 +1,13 @@
 <template>
   <div class="min-h-screen bg-gray-50 font-sans pb-10">
     
-    <header class="bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-6 pb-32 text-white px-6">
+    <header class="bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-4 pb-32 text-white px-6">
       <div class="max-w-7xl mx-auto">
-        
         <nav class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-2">
-            <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2">
-              <span class="w-6 h-6 bg-white rounded-full inline-block"></span>
-              Grand Frère
-            </div>
+            <img src ="/images/commun/logo_trans.png" class="tracking-tighter flex items-center gap-2">
+   
+            
           </div>
           <div class="hidden lg:flex gap-6 text-sm font-medium">
             <a href="#" class="hover:underline">Accueil</a>
@@ -40,7 +38,6 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </button>
         </div>
-
       </div>
     </header>
 
@@ -49,9 +46,7 @@
 
         <section class="mb-16">
           <h2 class="text-2xl font-bold text-gray-900 mb-8">Favoris du mois de nos curieux</h2>
-
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
             <div 
               v-for="item in favoris" 
               :key="item.id" 
@@ -64,38 +59,27 @@
                 <span class="text-[10px] font-bold text-gray-600">{{ item.date }}</span>
               </div>
 
-              <button class="absolute top-4 right-4 bg-white p-2 rounded-full shadow-sm hover:scale-110 transition z-10">
-                <svg class="w-4 h-4 text-gray-800 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-              </button>
-
               <button 
-                @click="item.likes++" 
+                @click="toggleLike(item)" 
                 class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-2 rounded-full flex items-center gap-1.5 shadow-md hover:bg-white transition z-10 hover:scale-105 active:scale-95"
               >
                 <svg 
-                  class="w-5 h-5 text-red-500 transition-colors" 
-                  :class="item.likes > 0 ? 'fill-current' : 'fill-none'" 
+                  class="w-5 h-5 text-red-500 transition-colors duration-300" 
+                  :class="item.hasLiked ? 'fill-current' : 'fill-none'" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
                 >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
-                <span class="text-sm font-bold text-gray-800">{{ item.likes }}</span>
+                <span class="text-sm font-bold text-gray-800">{{ formatNumber(item.likes) }}</span>
               </button>
             </div>
-          </div>
-
-          <div class="flex justify-end items-center mt-8 gap-3">
-             <button class="bg-[#3a3a3a] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black transition">&lt;</button>
-             <button class="bg-[#3a3a3a] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black transition">&gt;</button>
           </div>
         </section>
 
         <section>
           <h2 class="text-2xl font-bold text-gray-900 mb-8">Catégories</h2>
-
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
             <div 
               v-for="cat in categories" 
               :key="cat.id" 
@@ -103,30 +87,21 @@
             >
               <img :src="cat.image" alt="Carte Catégorie" class="absolute inset-0 w-full h-full object-cover" />
 
-              <button class="absolute top-6 right-6 bg-white p-2.5 rounded-full shadow-md hover:scale-110 transition z-10">
-                <svg class="w-4 h-4 text-gray-800 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-              </button>
-              
               <button 
-                @click="cat.likes++" 
+                @click="toggleLike(cat)" 
                 class="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-3 py-2 rounded-full flex items-center gap-1.5 shadow-md hover:bg-white transition z-10 hover:scale-105 active:scale-95"
               >
                 <svg 
-                  class="w-5 h-5 text-red-500 transition-colors" 
-                  :class="cat.likes > 0 ? 'fill-current' : 'fill-none'" 
+                  class="w-5 h-5 text-red-500 transition-colors duration-300" 
+                  :class="cat.hasLiked ? 'fill-current' : 'fill-none'" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
                 >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
-                <span class="text-sm font-bold text-gray-800">{{ cat.likes }}</span>
+                <span class="text-sm font-bold text-gray-800">{{ formatNumber(cat.likes) }}</span>
               </button>
             </div>
-          </div>
-          
-          <div class="flex justify-end items-center mt-8 gap-3">
-             <button class="bg-[#3a3a3a] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black transition">&lt;</button>
-             <button class="bg-[#3a3a3a] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-black transition">&gt;</button>
           </div>
         </section>
 
@@ -138,20 +113,53 @@
 <script setup>
 import { ref } from 'vue'
 
-// --- DÉFINIS TON IMAGE UNIQUE ICI ---
-const monImageUnique = '/images/Page_discovery/makeba3.png' // Remplace par le chemin de ton image
+// IMAGES
+const img_makeba = '/images/Page_discovery/makeba3.png'
+const img_basilique = '/images/Page_discovery/basilique_top.png' 
+const img_talou = '/images/Page_discovery/talou_top.png' 
+const img_sport = '/images/Page_discovery/sport.png' 
+const img_femmes = '/images/Page_discovery/femmes.png' 
+const img_soyinka = '/images/Page_discovery/soyinka_top.png' 
+const img_litterature = '/images/Page_discovery/litterature.png' 
+const img_tourisme = '/images/Page_discovery/tourisme.png' 
 
+// --- LOGIQUE DES LIKES ---
+
+/**
+ * Formate les nombres (ex: 1500 -> 1.5K)
+ */
+const formatNumber = (num) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(num % 1000 !== 0 ? 1 : 0) + 'K'
+  }
+  return num
+}
+
+/**
+ * Alterne entre liker et dé-liker
+ */
+const toggleLike = (item) => {
+  if (item.hasLiked) {
+    item.likes--
+    item.hasLiked = false
+  } else {
+    item.likes++
+    item.hasLiked = true
+  }
+}
+
+// DONNÉES REACTIVES
 const favoris = ref([
-  { id: 1, image: monImageUnique, date: '20.05.2025', likes: 0 },
-  { id: 2, image: monImageUnique, date: '20.05.2025', likes: 0 },
-  { id: 3, image: monImageUnique, date: '20.05.2025', likes: 0 },
-  { id: 4, image: monImageUnique, date: '20.05.2025', likes: 0 },
+  { id: 1, image: img_basilique, date: '20.05.2025', likes: 1200, hasLiked: false },
+  { id: 2, image: img_makeba, date: '20.05.2025', likes: 850, hasLiked: false },
+  { id: 3, image: img_talou, date: '20.05.2025', likes: 4300, hasLiked: true },
+  { id: 4, image: img_soyinka, date: '20.05.2025', likes: 95, hasLiked: false },
 ])
 
 const categories = ref([
-  { id: 1, image: monImageUnique, likes: 0 },
-  { id: 2, image: monImageUnique, likes: 0 },
-  { id: 3, image: monImageUnique, likes: 0 },
-  { id: 4, image: monImageUnique, likes: 0 },
+  { id: 1, image: img_femmes, likes: 540, hasLiked: false },
+  { id: 2, image: img_litterature, likes: 1200, hasLiked: false },
+  { id: 3, image: img_sport, likes: 890, hasLiked: false },
+  { id: 4, image: img_tourisme, likes: 2100, hasLiked: false },
 ])
 </script>
