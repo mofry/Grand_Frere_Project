@@ -2,7 +2,7 @@
 
     <div class = "min-h-screen bg-gray-50 font-sans pb-10">
 
-        <header class = "bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-4 pb-32 text-white px-6">
+        <header class = "bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-4 pb-32 text-white px-6 mb-6">
                  <div class="max-w-7xl mx-auto">
         <nav class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-2">
@@ -43,17 +43,75 @@
 
         </header>
 
+
+       
+
         <div class = "max-w-7xl mx-auto">
 
-              <div class = "bg-white shadow-xl rounded-[40px] p-6  ">
-                    <span class = "m-4 font-bold ">
-                        <h1>Basilique Notre Dame de la Paix
+              <div class = "bg-[url('/images/Page_discovery/gradiant.png')] shadow-xl rounded-[40px] p-6  ">
+                    <span class = "m-6 font-semibold text-[#543252] text-4xl">
+                        <h1>Basilique Notre Dame de <br>
+                          la Paix
                             </h1>
                     </span>
                         
-                    <span>
-                        <h2>Joyau architectural</h2>
-                    </span>
+                    <h2 class = "mb-4 text-[#543252] font-medium text-2xl">
+                        Joyau Architectural
+                    </h2>
+                    <div class = "flex flex-nowrap mb-6 ">
+                       <span class = "text-black">
+                        Tourisme
+
+                       </span>
+
+                     
+                      <div class="top-4 right-4 bg-white px-3 py-1.5 rounded-full flex items-center gap-1 shadow-sm z-10">
+                        <svg class="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span class="text-[10px] font-bold text-gray-600">{{ basilique.date }}</span>
+                      </div>
+
+                      <button  @click.stop="toggleLike(basilique)" 
+                         class="flex items-center gap-1 hover:scale-105 transition active:scale-95"
+                      >
+                      <span class="opacity-90">{{ formatNumber(basilique.likes) }}</span>
+                      <svg 
+                        class="w-4 h-4 transition-colors" 
+                        :class="basilique.hasLiked ? 'fill-black text-black' : 'fill-none stroke-white opacity-80'" 
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                      </svg>
+                      </button>
+
+
+                      <div class="flex items-center gap-1 opacity-80">
+                        <span>{{ basilique.views }}</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                      </div>
+
+
+
+
+                    </div>
+                    <div class = "flex justify-end my-auto">
+
+                    <img src = " /images/Page_discovery/vraie_basilique.png " />
+                    </div>
+                  
+
+                    <div class ="my-auto flex items-start backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[32px] p-8 md:p-10 max-w-xl w-full  text-[#543252]">
+                        
+                       <p>uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim <br> ad minim veniam, quis nostrud exercitation uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam, quis nostrud exercitation uis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat.  Ut enim ad minim veniam, quis nostrud exerco
+
+                      nostrud exercitation uis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation nostrud exercitation uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation</p>
+                       
+                    </div>
+
+
+
+                    
 
                 
 
@@ -81,3 +139,54 @@
 
 
 </template>
+
+
+
+
+<script setup>
+import { ref } from 'vue'
+
+// IMAGES
+const img_basilique = '/images/Page_discovery/basilique_tourisme.png'
+const img_cascade = '/images/Page_discovery/cascade_man.png' 
+const img_rocher = '/images/Page_discovery/rocher.png' 
+const img_archeologie = '/images/Page_discovery/archeologie.png' 
+
+
+// --- LOGIQUE DES LIKES ---
+
+/**
+ * Formate les nombres (ex: 1500 -> 1.5K)
+ */
+const formatNumber = (num) => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(num % 1000 !== 0 ? 1 : 0) + 'K'
+  }
+  return num
+}
+
+/**
+ * Alterne entre liker et dé-liker
+ */
+const toggleLike = (item) => {
+  if (item.hasLiked) {
+    item.likes--
+    item.hasLiked = false
+  } else {
+    item.likes++
+    item.hasLiked = true
+  }
+}
+
+// DONNÉES REACTIVES
+const sites_touristiques = ref([
+  { id: 1, image: img_basilique, date: '20.05.2025', likes: 1200, hasLiked: false, views: 2500 }, // Ajouté ici
+  { id: 2, image: img_cascade, date: '20.05.2025', likes: 850, hasLiked: false, views: 1200 },   // Et ici
+  { id: 3, image: img_rocher, date: '20.05.2025', likes: 4300, hasLiked: true, views: 8900 },
+  { id: 4, image: img_archeologie, date: '20.05.2025', likes: 95, hasLiked: false, views: 450 },
+])
+const basilique = sites_touristiques.value[1]
+
+
+
+</script>
