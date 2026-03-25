@@ -10,6 +10,9 @@
 
 
     <AppGrandFrerePage1 />
+    <AppGrandFrerePageFonctionnalite />
+    <AppGrandFrerePageAvantages  />
+    <AppGrandFrerePageAPropos />
  
 
 

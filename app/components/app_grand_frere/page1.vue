@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white font-sans overflow-hidden relative">
+  <div class="min-h-screen bg-white bg-cover bg-[url('/images/Page_discovery/gradiant.png'),_url('/images/Page_app/fond_piece.png')] font-sans overflow-hidden relative">
     
     <div class="absolute top-0 left-0 w-full h-[120vh] z-0 pointer-events-none overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-[#f29915] via-[#ea6075] to-[#e77695]"></div>

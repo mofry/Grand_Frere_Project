@@ -2,7 +2,7 @@
 
     <div class = "min-h-screen bg-gray-50 font-sans pb-10">
 
-        <header class = "bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-4 pb-32 text-white px-6 mb-6">
+        <header class = "bg-gradient-to-br from-[#eba111] via-[#e244b0] to-[#a429d6] pt-4 pb-48 text-white px-6 mb-6">
                  <div class="max-w-7xl mx-auto">
         <nav class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-2">
@@ -48,7 +48,7 @@
 
         <div class = "max-w-7xl mx-auto">
 
-              <div class = "bg-[url('/images/Page_discovery/gradiant.png')] shadow-xl rounded-[40px] p-6  ">
+              <div class = "bg-cover bg-[url('/images/Page_discovery/gradiant.png')] shadow-xl rounded-[40px] p-6  ">
                     <span class = "m-6 font-semibold text-[#543252] text-4xl">
                         <h1>Basilique Notre Dame de <br>
                           la Paix
@@ -58,7 +58,7 @@
                     <h2 class = "mb-4 text-[#543252] font-medium text-2xl">
                         Joyau Architectural
                     </h2>
-                    <div class = "flex flex-nowrap mb-6 ">
+                    <div class = "flex flex-nowrap mb-6 gap-4">
                        <span class = "text-black">
                         Tourisme
 
@@ -94,22 +94,80 @@
 
 
                     </div>
+
+
+
+                  <div class = "flex flex-nowrap items-start  gap-8 mb-8">
+                    <div class = "grid grid-cols-1 grid-flow-row gap-5 max-w-xl">
+                      <div class ="flex backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[32px] p-8 md:p-10 max-w-xl w-full  text-[#543252] mb-4">
+                        
+                        <div class = "grid grid-cols-2 grid-flow-row gap-y-5 gap-x-12 h-fit">
+                          <div class = "flex items-center gap-2">
+                            <img src = "/images/Page_discovery/marteau.svg"/>
+                             <span>Construction</span>
+                          </div>
+                          <div>Hauteur totale : 158 m</div>
+
+
+                         <div class = "flex items-center gap-2">
+                             <img src = "/images/Page_discovery/cube.svg"/>
+                             <span>Superficie</span>
+                         </div>
+                         <div>Année de consécration : 1990</div>
+
+                         <div class = "flex items-center gap-2" >
+                             <img src = "/images/Page_discovery/people.svg"/>
+                             <span>Capacité</span>
+                         </div>
+                         <div>Capacité d'accueil : 18 000 </div>
+
+                         <div class = "flex items-center gap-2" >
+                             <img src = "/images/Page_discovery/cash.svg"/>
+                             <span>Coût</span>
+                         </div>
+           
+
+
+                          
+
+
+                        </div>
+
+
+                      </div>
+
+                    <div class = "max-w-xl">uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                          consequat.  Ut enim ad minim veniam, quis nostrud exercitation uis nostrud 
+                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+                          Ut enim ad minim veniam,odo uis nostrud exercitation ullamco laboris nisi
+                           ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam, quis nostrud 
+                           exercitation uis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat.  Ut enim ad minim veniam, 
+                           quis nostrud exerco
+
+                              nostrud exercitation uis nostrud exercitation 
+                              ullamco laboris nisi ut aliquip ex ea 
+                                commodo consequat.  Ut enim ad minim veniam,odo
+                                 uis nostrud exercitation nostrud exercitation uis nostrud
+                                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                   Ut enim ad minim veniam,odo uis nostrud exercitation
+                      </div>
+                  </div>
+
+                    
+
                     <div class = "flex justify-end my-auto">
 
                     <img src = " /images/Page_discovery/vraie_basilique.png " />
                     </div>
-                  
-
-                    <div class ="my-auto flex items-start backdrop-blur-md border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[32px] p-8 md:p-10 max-w-xl w-full  text-[#543252]">
-                        
-                       <p>uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim <br> ad minim veniam, quis nostrud exercitation uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam, quis nostrud exercitation uis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat.  Ut enim ad minim veniam, quis nostrud exerco
-
-                      nostrud exercitation uis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation nostrud exercitation uis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Ut enim ad minim veniam,odo uis nostrud exercitation</p>
-                       
-                    </div>
 
 
+
+
+                  </div>
+
+
+               
+   
 
                     
 
@@ -121,6 +179,40 @@
       
 
 
+
+                <footer class="mt-24 border-t border-gray-200 bg-[#fafafa] pt-12 pb-20">
+      <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
+        
+        <div class="flex items-start gap-2">
+          <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2 text-[#b67a3d]">
+             <span class="w-6 h-6 bg-[#b67a3d] rounded-full inline-block"></span>
+             Grand Frère
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24 text-sm font-medium text-gray-600">
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold text-gray-900 mb-1">Pages</h4>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">La carte</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">Discovery</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">Écoles</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">Parents</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">Fournisseurs</NuxtLink>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold text-gray-900 mb-1">Aide</h4>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">A propos</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">FAQ</NuxtLink>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold text-gray-900 mb-1">Comptes</h4>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">S'inscrire</NuxtLink>
+            <NuxtLink to="#" class="hover:text-[#b67a3d] transition">Se connecter</NuxtLink>
+          </div>
+        </div>
+
+      </div>
+    </footer>
 
 
 
