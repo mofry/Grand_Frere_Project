@@ -17,7 +17,7 @@
         
         <div class="relative flex items-center justify-center h-[400px] md:h-[500px]">
           <div class="relative z-20 transform translate-x-10 md:translate-x-20">
-            <img src="/images/Page_recharge/telephone.png" alt="Smartphone" class="w-[200px] md:w-[280px] drop-shadow-2xl">
+            <img src="/images/Page_app/phone_cote.png" alt="Smartphone" class="w-[200px] md:w-[280px] drop-shadow-2xl">
           </div>
 
           <div class="absolute z-10 transform -translate-x-16 -translate-y-24 md:-translate-x-28 md:-translate-y-32 -rotate-12">
@@ -33,9 +33,7 @@
           
           <div v-for="(item, index) in features" :key="index" class="flex items-start gap-5">
             <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-[#d98b3a] to-[#9b4d8d] flex items-center justify-center shadow-md">
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-8 h-8">
-                <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.14 6.337.408 1.921.245 3.413 1.913 3.413 3.845v10.235c0 1.932-1.492 3.6-3.413 3.845-2.075.27-4.19.408-6.337.408-2.147 0-4.262-.14-6.337-.408C2.992 20.538 1.5 18.87 1.5 16.938V6.503c0-1.932 1.5-3.6 3.413-3.845zM9 13a1 1 0 100-2 1 1 0 000 2zm4-1a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
+              <img src = "/images/Page_recharge/icone_sms.svg" />
             </div>
             <div>
               <h4 class="text-xl font-bold text-gray-800 mb-1">{{ item.title }}</h4>

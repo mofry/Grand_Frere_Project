@@ -9,9 +9,17 @@
   </h1>
 
 
-  <img src="/images/Page_vidéo1/Frame_14.png" alt="Piece" class="w-150 h-auto align-middle mt-10">
-
   
+
+    <video 
+        controls 
+        poster="/images/Page_vidéo1/Frame_14.png" 
+        class="w-[800px] rounded-2xl"
+    >
+        <source src="/videos/grand_frere_video.mp4" type="video/mp4">
+    </video>
+
+      
 
 
 

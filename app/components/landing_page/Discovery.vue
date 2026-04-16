@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[85vh] w-full pl-20 p-10 lg:pt-16 pb-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#2a0e0e] via-[#000000] via-40% to-[#1a0b2e] relative overflow-hidden flex items-start">
+  <div class="min-h-screen w-full pl-20 p-10 lg:pt-16 pb-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#2a0e0e] via-[#000000] via-40% to-[#1a0b2e] relative overflow-hidden flex items-start">
 
     <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full blur-[120px] -z-10"></div>
     <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-orange-600/10 rounded-full blur-[100px] -z-10"></div>
@@ -22,6 +22,7 @@
 
         <div class="max-w-md mb-8 text-white text-sm font-mono backdrop-blur-sm opacity-80">
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   minim veniam, quis nostrud exercitation uis nostrud exercitation ullamco laboris nisi ut aliquip
         </div>
 
         <NuxtLink to="/discovery" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-8 py-3 rounded-xl text-white font-bold shadow-lg shadow-orange-900/30 hover:opacity-90 transition-all">

@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <p class="text-[20px] text-gray-800 leading-relaxed">
+    <p class="mb-20 text-[20px] text-gray-800 leading-relaxed">
       <span class="font-bold text-gray-800">
         Notre solution disponible dans les écoles partenaires
       </span>
@@ -25,12 +25,15 @@
       </span>
       L'argent liquide est supprimé <br />pour limiter les dépenses non encadrées.
     </p>
+    <div>
+      <NuxtLink to="/commencez_now" class=" bg-gradient-to-r from-[#e67e22] to-[#a55eea] w-[254px] h-[50px] flex items-center justify-center rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+        Commencez maintenant
+      </NuxtLink>
 
-    <NuxtLink to="/commencez_now" class="my-10 bg-gradient-to-r from-[#e67e22] to-[#a55eea] w-[254px] h-[50px] flex items-center justify-center rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
-      Commencez maintenant
-    </NuxtLink>
 
-    <div class="flex justify-center space-x-12 flex-row mt-12">
+    </div>
+
+    <div class="flex justify-center space-x-12 flex-row mt-32">
 
       <div class="
           relative

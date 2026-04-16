@@ -7,13 +7,33 @@
 
 
 
+    <section id = "l'application" class="scroll-mt-24">
 
+      <AppGrandFrerePage1 />
+    </section>
 
-    <AppGrandFrerePage1 />
-    <AppGrandFrerePageFonctionnalite />
-    <AppGrandFrerePageAvantages  />
-    <AppGrandFrerePageAPropos />
- 
+  
+    <section id = "fonctionnalités" class="scroll-mt-24">
+
+      <AppGrandFrerePageFonctionnalite />
+    </section>
+
+  
+    <section id = "avantages" class="scroll-mt-24">
+
+      <AppGrandFrerePageAvantages />
+    </section>
+
+  
+    <section id = "apropos" class="scroll-mt-24">
+
+      <AppGrandFrerePageAPropos />
+    </section>
+
+    <section id = "faq" class="scroll-mt-24">
+
+      <AppGrandFrerePageFaq />
+    </section>
 
 
 

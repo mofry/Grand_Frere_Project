@@ -86,7 +86,7 @@
         </div>
 
         <div class="flex justify-center mt-12">
-          <NuxtLink to ="/formulaire3" 
+          <NuxtLink to ="/formulaire_fournisseur2" 
             @click="step++"
             class="px-16 py-3 border border-gray-300 rounded-2xl font-semibold text-gray-600 hover:bg-gray-50 transition-colors shadow-sm"
           >

@@ -102,7 +102,7 @@
           </div>
 
           <div class="flex justify-center pt-10">
-            <NuxtLink to ="/formulaire4" class="px-16 py-3 border-2 border-gray-300 rounded-2xl font-bold text-gray-600 hover:bg-gray-50 transition-all text-sm">
+            <NuxtLink to ="/formulaire_fournisseur3" class="px-16 py-3 border-2 border-gray-300 rounded-2xl font-bold text-gray-600 hover:bg-gray-50 transition-all text-sm">
               Suivant
             </NuxtLink>
           </div>

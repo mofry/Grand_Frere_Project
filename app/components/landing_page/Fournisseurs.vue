@@ -1,5 +1,5 @@
 <template>
-<section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden py-20 px-6">
+<section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-20 px-6">
   
   <div class="absolute inset-0 z-0">
     <img 
@@ -28,9 +28,9 @@
       veniam,odo Ut enim ad minim veniam, quis nostrud
     </p>
 
-    <Nuxtlink to ="/fournisseur2" class="px-10 py-4 rounded-2xl border border-white/30 text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm">
+    <NuxtLink to ="/formulaire_fournisseur1" class="px-10 py-4 rounded-2xl border border-white/30 text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105 shadow-lg backdrop-blur-sm">
       Devenir Fournisseur
-    </Nuxtlink>
+    </NuxtLink>
 
   </div>
 </section>

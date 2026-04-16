@@ -37,12 +37,12 @@
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-end">
-            <button class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
+            <NuxtLink  to="/repertoire_ecoles" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
               Voir la liste des écoles Partenaires
-            </button>
-            <button class="px-8 py-3.5 rounded-xl border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">
+            </Nuxtlink>
+            <NuxtLink to = /landing_app class="px-8 py-3.5 rounded-xl border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">
               Téléchargez l'application
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

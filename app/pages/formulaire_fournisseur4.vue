@@ -3,13 +3,13 @@
 </script>
 
 <template>
-  <div class="pages_destination">
+  <div class="autres_pages">
 
 
 
 
 
-    <PagesDestinationFormulaire1 />
+    <PagesDestinationFormulaireFournisseur4 />
  
 
 

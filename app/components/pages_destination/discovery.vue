@@ -5,26 +5,29 @@
       <div class="max-w-7xl mx-auto">
         <nav class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-2">
-            <img src ="/images/commun/logo_trans.png" class="tracking-tighter flex items-center gap-2">
-   
-            
+            <img src="/images/commun/logo_trans.png" class="tracking-tighter flex items-center gap-2">
           </div>
+          
           <div class="hidden lg:flex gap-6 text-sm font-medium">
-            <a href="#" class="hover:underline">Accueil</a>
-            <a href="#" class="hover:underline">La carte</a>
-            <a href="#" class="hover:underline">Discovery</a>
-            <a href="#" class="hover:underline">Écoles</a>
-            <a href="#" class="hover:underline">Parents</a>
-            <a href="#" class="hover:underline">Fournisseurs</a>
-            <a href="#" class="hover:underline">A propos</a>
-            <a href="#" class="hover:underline">FAQ</a>
+            <NuxtLink to="/" class="hover:underline">Accueil</NuxtLink>
+            <NuxtLink to="/#carte" class="hover:underline">La carte</NuxtLink>
+            
+            <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="hover:underline">Discovery</button>
+            
+            <NuxtLink to="/#ecoles" class="hover:underline">Écoles</NuxtLink>
+            <NuxtLink to="/#parents" class="hover:underline">Parents</NuxtLink>
+            <NuxtLink to="/#fournisseur" class="hover:underline">Fournisseurs</NuxtLink>
+            <NuxtLink to="/#apropos" class="hover:underline">A propos</NuxtLink>
+            <NuxtLink to="/#faq" class="hover:underline">FAQ</NuxtLink>
           </div>
+          
           <div class="flex items-center gap-4">
             <button class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</button>
-            <button class="flex items-center gap-2 text-sm hover:opacity-80 transition">
+            
+            <NuxtLink to="/seConnecter" class="flex items-center gap-2 text-sm hover:opacity-80 transition">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               Se connecter
-            </button>
+            </NuxtLink>
           </div>
         </nav>
 
@@ -80,15 +83,16 @@
         <section>
           <h2 class="text-2xl font-bold text-gray-900 mb-8">Catégories</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div 
+            <NuxtLink 
               v-for="cat in categories" 
               :key="cat.id" 
-              class="relative group rounded-[2.5rem] overflow-hidden aspect-[2/3] shadow-sm bg-gray-100"
+              :to="cat.link"
+              class="block relative group rounded-[2.5rem] overflow-hidden aspect-[2/3] shadow-sm bg-gray-100 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             >
-              <img :src="cat.image" alt="Carte Catégorie" class="absolute inset-0 w-full h-full object-cover" />
+              <img :src="cat.image" alt="Carte Catégorie" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
 
               <button 
-                @click="toggleLike(cat)" 
+                @click.prevent.stop="toggleLike(cat)" 
                 class="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-3 py-2 rounded-full flex items-center gap-1.5 shadow-md hover:bg-white transition z-10 hover:scale-105 active:scale-95"
               >
                 <svg 
@@ -101,7 +105,7 @@
                 </svg>
                 <span class="text-sm font-bold text-gray-800">{{ formatNumber(cat.likes) }}</span>
               </button>
-            </div>
+            </NuxtLink>
           </div>
         </section>
 
@@ -156,10 +160,13 @@ const favoris = ref([
   { id: 4, image: img_soyinka, date: '20.05.2025', likes: 95, hasLiked: false },
 ])
 
+// =============================================================
+// AJOUT DE LA PROPRIÉTÉ 'link' POUR GERER LA NAVIGATION
+// =============================================================
 const categories = ref([
-  { id: 1, image: img_femmes, likes: 540, hasLiked: false },
-  { id: 2, image: img_litterature, likes: 1200, hasLiked: false },
-  { id: 3, image: img_sport, likes: 890, hasLiked: false },
-  { id: 4, image: img_tourisme, likes: 2100, hasLiked: false },
+  { id: 1, image: img_femmes, likes: 540, hasLiked: false, link: '/categorie/femmes' },
+  { id: 2, image: img_litterature, likes: 1200, hasLiked: false, link: '/categorie/litterature' },
+  { id: 3, image: img_sport, likes: 890, hasLiked: false, link: '/categorie/sport' },
+  { id: 4, image: img_tourisme, likes: 2100, hasLiked: false, link: '/tourisme' }, // <-- Ton lien demandé
 ])
 </script>

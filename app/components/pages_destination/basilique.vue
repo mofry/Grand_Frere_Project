@@ -11,14 +11,16 @@
             
           </div>
           <div class="hidden lg:flex gap-6 text-sm font-medium">
-            <a href="#" class="hover:underline">Accueil</a>
-            <a href="#" class="hover:underline">La carte</a>
-            <a href="#" class="hover:underline">Discovery</a>
-            <a href="#" class="hover:underline">Écoles</a>
-            <a href="#" class="hover:underline">Parents</a>
-            <a href="#" class="hover:underline">Fournisseurs</a>
-            <a href="#" class="hover:underline">A propos</a>
-            <a href="#" class="hover:underline">FAQ</a>
+            <NuxtLink to="/" class="hover:underline">Accueil</NuxtLink>
+            <NuxtLink to="/#carte" class="hover:underline">La carte</NuxtLink>
+            
+            <button @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="hover:underline">Discovery</button>
+            
+            <NuxtLink to="/#ecoles" class="hover:underline">Écoles</NuxtLink>
+            <NuxtLink to="/#parents" class="hover:underline">Parents</NuxtLink>
+            <NuxtLink to="/#fournisseur" class="hover:underline">Fournisseurs</NuxtLink>
+            <NuxtLink to="/#apropos" class="hover:underline">A propos</NuxtLink>
+            <NuxtLink to="/#faq" class="hover:underline">FAQ</NuxtLink>
           </div>
           <div class="flex items-center gap-4">
             <button class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</button>

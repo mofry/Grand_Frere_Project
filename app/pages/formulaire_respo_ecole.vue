@@ -3,13 +3,13 @@
 </script>
 
 <template>
-  <div class="landing-page">
+  <div class="autres_pages">
 
 
 
 
 
-    <LandingPageFournisseurs />
+    <PagesDestinationFormulaireRespoEcole />
  
 
 

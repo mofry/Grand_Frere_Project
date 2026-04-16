@@ -23,11 +23,11 @@
       </div>
       
       <nav class="hidden lg:flex gap-8 text-sm font-medium">
-        <NuxtLink to="#" class="hover:opacity-80 transition">L'application</NuxtLink>
-        <NuxtLink to="#" class="hover:opacity-80 transition">Fonctionnalités</NuxtLink>
-        <NuxtLink to="#" class="hover:opacity-80 transition">Avantages</NuxtLink>
-        <NuxtLink to="#" class="hover:opacity-80 transition">A propos</NuxtLink>
-        <NuxtLink to="#" class="hover:opacity-80 transition">FAQ</NuxtLink>
+        <NuxtLink to="#l'application" class="hover:opacity-80 transition">L'application</NuxtLink>
+        <NuxtLink to="#fonctionnalités" class="hover:opacity-80 transition">Fonctionnalités</NuxtLink>
+        <NuxtLink to="#avantages" class="hover:opacity-80 transition">Avantages</NuxtLink>
+        <NuxtLink to="#apropos" class="hover:opacity-80 transition">A propos</NuxtLink>
+        <NuxtLink to="#faq" class="hover:opacity-80 transition">FAQ</NuxtLink>
       </nav>
       
       <div class="flex items-center gap-4">

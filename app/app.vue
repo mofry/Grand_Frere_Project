@@ -1,10 +1,6 @@
 <template>
   <div class="min-h-screen w-full bg-white pb-20">
-    
-    
-
     <NuxtPage />
-    
   </div>
 </template>
 
@@ -23,12 +19,9 @@
     font-family: 'NirmanaText', sans-serif;
     margin: 0; /* Bon réflexe pour éviter les marges blanches par défaut */
   }
+
+  /* === AJOUT POUR LE DÉFILEMENT FLUIDE (SMOOTH SCROLLING) === */
+  html {
+    scroll-behavior: smooth;
+  }
 </style>
-
-
-
-
-
-
-
-

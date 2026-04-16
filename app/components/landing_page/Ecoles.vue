@@ -27,7 +27,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <NuxtLink to = "/ecole" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] via-[#d946ef] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
+          <NuxtLink to = "/repertoire_ecoles" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] via-[#d946ef] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
             Voir la liste des écoles Partenaires
           </NuxtLink>
           <button class="px-8 py-3.5 rounded-xl border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">
