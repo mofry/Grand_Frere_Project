@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col relative overflow-hidden">
 
-    <img src = "/images/Page_connexion/bg.png" class = "absolute w-full h-screen"/>
+    <img src="/images/Page_connexion/bg.png" class="absolute w-full h-screen"/>
 
     <nav class="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
       
-      <img src="/images/Page_vidéo1/logo_complet.png"  />
+      <img src="/images/Page_vidéo1/logo_complet.png" />
        
       <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
         <a href="#" class="hover:text-orange-500 transition">Acceuil</a>
@@ -33,9 +33,6 @@
       </div>
     </nav>
 
-
-
-
     <main class="relative z-10 flex-1 flex items-center justify-center p-6">
       <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-12 rounded-[2.5rem] shadow-2xl w-full max-w-xl">
         <div class="mb-10">
@@ -49,13 +46,17 @@
           </p>
         </div>
 
+        <div v-if="errorMessage" class="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+          {{ errorMessage }}
+        </div>
+
         <form @submit.prevent="handleLogin" class="space-y-6">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">Nom d'utilisateur / E-mail</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">E-mail</label>
             <input 
-              type="text" 
-              v-model="username"
-              placeholder="Rania Kouakou"
+              type="email" 
+              v-model="email"
+              placeholder="exemple@email.com"
               class="w-full px-4 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:ring-2 focus:ring-orange-200 focus:outline-none transition"
             />
           </div>
@@ -86,14 +87,26 @@
 
           <div class="pt-4 flex flex-col items-center gap-6">
             <button 
-              type="submit" 
+              type="submit"
+              :disabled="isLoading"
               class="w-2/3 bg-gradient-to-r from-[#e67e22] to-[#a55eea] text-white font-bold py-4 rounded-2xl 
-              shadow-lg shadow-orange-200 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              shadow-lg shadow-orange-200 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Se connecter
+              {{ isLoading ? 'Connexion en cours...' : 'Se connecter' }}
             </button>
 
-            <NuxtLink to ="/mdp_forgot" class="text-slate-400 text-sm flex items-center gap-2 hover:text-orange-500 transition">
+            <div class="flex gap-2 text-sm text-slate-600">
+              <span>Pas de compte ?</span>
+              <button 
+                type="button"
+                @click="goToRegister"
+                class="text-orange-500 font-semibold hover:text-orange-600 transition"
+              >
+                Créer un compte
+              </button>
+            </div>
+
+            <NuxtLink to="/mdp_forgot" class="text-slate-400 text-sm flex items-center gap-2 hover:text-orange-500 transition">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -107,15 +120,40 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { useAuthStore } from '~/stores/auth'
+import { useRouter } from '#app'
 
-const username = ref('Rania Kouakou');
-const password = ref('password123');
-const showPassword = ref(false);
+const authStore = useAuthStore()
+const router = useRouter()
 
-const handleLogin = () => {
-  console.log("Tentative de connexion pour :", username.value);
-};
+const email = ref('test@example.com')
+const password = ref('password123')
+const showPassword = ref(false)
+const errorMessage = ref('')
+const isLoading = ref(false)
+
+const handleLogin = async () => {
+  errorMessage.value = ''
+  isLoading.value = true
+  
+  try {
+    if (!email.value || !password.value) {
+      throw new Error('Veuillez remplir tous les champs')
+    }
+    
+    await authStore.login(email.value, password.value)
+    await router.push('/dashboard')
+  } catch (error) {
+    errorMessage.value = error.message || 'Erreur lors de la connexion'
+  } finally {
+    isLoading.value = false
+  }
+}
+
+const goToRegister = () => {
+  router.push('/inscription')
+}
 </script>
 
 <style scoped>
