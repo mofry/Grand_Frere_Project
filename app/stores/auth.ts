@@ -1,166 +1,147 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-export interface UserProfile {
-  id: string
-  email: string
-  username: string
-  civilite: string
-  nom: string
-  prenoms: string
-  telephone: string
-  fonction: string
-  entreprise: string
-  typeUtilisateur: 'ecole' | 'fournisseur' | 'parent' | 'autre'
-  message?: string
-  dateCreation: string
-}
+const ACCESS_KEY = 'grand_frere_access_token'
+const REFRESH_KEY = 'grand_frere_refresh_token'
+const PHONE_KEY = 'grand_frere_phone'
 
-export interface AuthState {
-  user: UserProfile | null
-  isAuthenticated: boolean
-  token: string | null
+interface TokenResponse {
+  statusCode?: number
+  data?: {
+    accessToken: string
+    refreshToken: string
+  }
+  // certains environnements renvoient les tokens à la racine
+  accessToken?: string
+  refreshToken?: string
 }
 
 export const useAuthStore = defineStore('auth', () => {
-  const user = ref<UserProfile | null>(null)
-  const isAuthenticated = ref(false)
-  const token = ref<string | null>(null)
+  const accessToken = ref<string | null>(null)
+  const refreshToken = ref<string | null>(null)
+  const phone = ref<string | null>(null)
 
-  // Charger les données depuis le localStorage au montage
+  const isAuthenticated = computed(() => !!accessToken.value)
+  // Décoder un JWT simple pour extraire le payload (si présent)
+  const decodeJwtPayload = (token?: string | null) => {
+    if (!token) return null
+    try {
+      const parts = token.split('.')
+      if (parts.length < 2) return null
+      const payload = parts[1]
+      // replace URL-safe base64 chars
+      const base64 = payload.replace(/-/g, '+').replace(/_/g, '/')
+      const json = decodeURIComponent(
+        atob(base64)
+          .split('')
+          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+          .join('')
+      )
+      return JSON.parse(json)
+    } catch {
+      return null
+    }
+  }
+
+  const role = computed(() => {
+    const payload = decodeJwtPayload(accessToken.value)
+    if (!payload) return null
+    return payload.role ?? payload.roles ?? null
+  })
+
+  // Conservé pour la compatibilité avec le code existant (dashboard, etc.)
+  const user = computed(() => (accessToken.value ? { phone: phone.value, role: role.value } : null))
+
+  const config = () => useRuntimeConfig().public.apiBase as string
+
+  const extractTokens = (res: TokenResponse) => {
+    const tokens = res?.data ?? res
+    if (!tokens?.accessToken) {
+      throw new Error('Réponse inattendue du serveur (aucun token reçu)')
+    }
+    return tokens
+  }
+
+  const persist = () => {
+    if (import.meta.client) {
+      if (accessToken.value) localStorage.setItem(ACCESS_KEY, accessToken.value)
+      if (refreshToken.value) localStorage.setItem(REFRESH_KEY, refreshToken.value)
+      if (phone.value) localStorage.setItem(PHONE_KEY, phone.value)
+    }
+  }
+
+  const clear = () => {
+    accessToken.value = null
+    refreshToken.value = null
+    phone.value = null
+    if (import.meta.client) {
+      localStorage.removeItem(ACCESS_KEY)
+      localStorage.removeItem(REFRESH_KEY)
+      localStorage.removeItem(PHONE_KEY)
+    }
+  }
+
   const initializeAuth = () => {
-    const savedUser = localStorage.getItem('grand_frere_user')
-    const savedToken = localStorage.getItem('grand_frere_token')
-    
-    if (savedUser && savedToken) {
-      user.value = JSON.parse(savedUser)
-      token.value = savedToken
-      isAuthenticated.value = true
-    }
+    if (!import.meta.client) return
+    accessToken.value = localStorage.getItem(ACCESS_KEY)
+    refreshToken.value = localStorage.getItem(REFRESH_KEY)
+    phone.value = localStorage.getItem(PHONE_KEY)
   }
 
-  const generateId = () => {
-    return 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now()
+  /** Connexion par numéro de téléphone + mot de passe. */
+  const signin = async (phoneNumber: string, password: string) => {
+    const res = await $fetch<TokenResponse>('/api/auth/signin', {
+      method: 'POST',
+      body: { phone: phoneNumber, password }
+    })
+    const tokens = extractTokens(res)
+    accessToken.value = tokens.accessToken
+    refreshToken.value = tokens.refreshToken ?? null
+    phone.value = phoneNumber
+    persist()
   }
 
-  const generateToken = () => {
-    return 'token_' + Math.random().toString(36).substr(2, 16) + '_' + Date.now()
+  /** Rafraîchit l'access token à partir du refresh token. */
+  const refresh = async () => {
+    if (!refreshToken.value) throw new Error('Aucun refresh token disponible')
+    const res = await $fetch<TokenResponse>('/api/auth/refresh', {
+      method: 'POST',
+      body: { refreshToken: refreshToken.value }
+    })
+    const tokens = extractTokens(res)
+    accessToken.value = tokens.accessToken
+    refreshToken.value = tokens.refreshToken ?? refreshToken.value
+    persist()
   }
 
-  const register = (userData: Omit<UserProfile, 'id' | 'dateCreation'>, password: string) => {
-    // Vérifier si l'email existe déjà
-    const existingUsers = JSON.parse(localStorage.getItem('grand_frere_all_users') || '[]')
-    if (existingUsers.some((u: any) => u.email === userData.email)) {
-      throw new Error('Cet email est déjà utilisé')
-    }
-
-    const newUser: UserProfile = {
-      ...userData,
-      id: generateId(),
-      dateCreation: new Date().toISOString()
-    }
-
-    // Sauvegarder le mot de passe hashé simplement (en production, utiliser bcrypt)
-    const hashedPassword = btoa(password) // Encodage simple pour MVP
-    
-    const userWithPassword = {
-      ...newUser,
-      passwordHash: hashedPassword
-    }
-
-    // Ajouter à la liste des utilisateurs
-    existingUsers.push(userWithPassword)
-    localStorage.setItem('grand_frere_all_users', JSON.stringify(existingUsers))
-
-    // Connecter automatiquement après l'inscription
-    const newToken = generateToken()
-    user.value = newUser
-    token.value = newToken
-    isAuthenticated.value = true
-
-    // Sauvegarder la session courante
-    localStorage.setItem('grand_frere_user', JSON.stringify(newUser))
-    localStorage.setItem('grand_frere_token', newToken)
-
-    return newUser
-  }
-
-  const login = (email: string, password: string) => {
-    const allUsers = JSON.parse(localStorage.getItem('grand_frere_all_users') || '[]')
-    const hashedPassword = btoa(password)
-
-    const foundUser = allUsers.find((u: any) => u.email === email && u.passwordHash === hashedPassword)
-
-    if (!foundUser) {
-      throw new Error('Email ou mot de passe incorrect')
-    }
-
-    // Extraire les données sans le mot de passe
-    const { passwordHash, ...userWithoutPassword } = foundUser
-    const newToken = generateToken()
-
-    user.value = userWithoutPassword
-    token.value = newToken
-    isAuthenticated.value = true
-
-    // Sauvegarder la session
-    localStorage.setItem('grand_frere_user', JSON.stringify(userWithoutPassword))
-    localStorage.setItem('grand_frere_token', newToken)
-
-    return userWithoutPassword
-  }
-
-  const logout = () => {
-    user.value = null
-    token.value = null
-    isAuthenticated.value = false
-
-    localStorage.removeItem('grand_frere_user')
-    localStorage.removeItem('grand_frere_token')
-  }
-
-  const updateProfile = (updates: Partial<UserProfile>) => {
-    if (!user.value) {
-      throw new Error('Aucun utilisateur connecté')
-    }
-
-    user.value = { ...user.value, ...updates }
-
-    // Mettre à jour dans localStorage
-    localStorage.setItem('grand_frere_user', JSON.stringify(user.value))
-
-    // Mettre à jour dans la liste complète
-    const allUsers = JSON.parse(localStorage.getItem('grand_frere_all_users') || '[]')
-    const userIndex = allUsers.findIndex((u: any) => u.id === user.value?.id)
-    if (userIndex !== -1) {
-      allUsers[userIndex] = {
-        ...allUsers[userIndex],
-        ...updates
+  const logout = async () => {
+    try {
+      if (refreshToken.value) {
+        await $fetch('/api/auth/signout', {
+          method: 'POST',
+          body: { refreshToken: refreshToken.value }
+        })
       }
-      localStorage.setItem('grand_frere_all_users', JSON.stringify(allUsers))
+    } catch {
+      // On ignore les erreurs de déconnexion côté serveur : on nettoie quand même localement.
+    } finally {
+      clear()
     }
-
-    return user.value
-  }
-
-  const getProfile = () => {
-    return user.value
   }
 
   return {
-    // State
-    user,
+    // state
+    accessToken,
+    refreshToken,
+    phone,
+    role,
+    // getters
     isAuthenticated,
-    token,
-
-    // Getters
-    getProfile,
-
-    // Actions
+    user,
+    // actions
     initializeAuth,
-    register,
-    login,
-    logout,
-    updateProfile
+    signin,
+    refresh,
+    logout
   }
 })

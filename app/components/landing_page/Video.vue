@@ -23,7 +23,7 @@
       <div class="snap-center shrink-0 w-full flex justify-center">
         <video 
           controls 
-          poster="/images/Page_vidéo1/Frame_14.png" 
+
           class="w-full rounded-2xl shadow-lg"
         >
           <source src="/videos/pour_les_parents.mp4" type="video/mp4">

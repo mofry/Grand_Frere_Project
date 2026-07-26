@@ -45,6 +45,12 @@
           <span class="text-[15px]" style="color:#363636;">Livraisons</span>
         </NuxtLink>
 
+        <!-- Demandes d'écoles -->
+        <NuxtLink to="/demandes-ecoles" class="flex items-center gap-3 px-6 py-3 cursor-pointer hover:bg-gray-50 rounded-lg mx-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8L12 13L22 8L12 3Z" stroke="#363636" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 10.5V16C6 16 8 18 12 18C16 18 18 16 18 16V10.5" stroke="#363636" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 8V13" stroke="#363636" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="text-[15px]" style="color:#363636;">Demandes d'écoles</span>
+        </NuxtLink>
+
         <!-- Divider -->
         <div class="mt-6 mb-2">
           <p class="text-[11px] uppercase tracking-wider px-6 mb-1" style="color:#A0A8B0;">Support</p>

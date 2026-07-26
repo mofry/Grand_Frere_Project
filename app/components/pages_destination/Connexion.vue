@@ -52,11 +52,11 @@
 
         <form @submit.prevent="handleLogin" class="space-y-6">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">E-mail</label>
-            <input 
-              type="email" 
-              v-model="email"
-              placeholder="exemple@email.com"
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Numéro de téléphone</label>
+            <input
+              type="tel"
+              v-model="phone"
+              placeholder="+225..."
               class="w-full px-4 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:ring-2 focus:ring-orange-200 focus:outline-none transition"
             />
           </div>
@@ -127,8 +127,8 @@ import { useRouter } from '#app'
 const authStore = useAuthStore()
 const router = useRouter()
 
-const email = ref('test@example.com')
-const password = ref('password123')
+const phone = ref('')
+const password = ref('')
 const showPassword = ref(false)
 const errorMessage = ref('')
 const isLoading = ref(false)
@@ -136,16 +136,17 @@ const isLoading = ref(false)
 const handleLogin = async () => {
   errorMessage.value = ''
   isLoading.value = true
-  
+
   try {
-    if (!email.value || !password.value) {
+    if (!phone.value || !password.value) {
       throw new Error('Veuillez remplir tous les champs')
     }
-    
-    await authStore.login(email.value, password.value)
-    await router.push('/dashboard')
+
+    await authStore.signin(phone.value, password.value)
+    await router.push('/demandes-ecoles')
   } catch (error) {
-    errorMessage.value = error.message || 'Erreur lors de la connexion'
+    errorMessage.value =
+      error?.data?.message || error?.message || 'Numéro ou mot de passe incorrect'
   } finally {
     isLoading.value = false
   }

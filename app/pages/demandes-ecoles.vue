@@ -1,0 +1,3 @@
+<template>
+  <DashboardDemandesEcoles />
+</template>
