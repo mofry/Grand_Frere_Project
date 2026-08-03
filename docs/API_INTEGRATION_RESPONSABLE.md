@@ -104,3 +104,145 @@ Annexes — Exemples rapides
 
 Besoin d'aide suivante?
 - Je peux: 1) parcourir le Swagger et identifier les endpoints exacts pour vous, 2) implémenter la `axios` instance et actions Pinia dans `stores/auth.ts`, 3) ajouter un exemple de formulaire d'inscription et d'un handler pour ce repo.
+
+
+
+////////////////////METHODES A SUIVRE POUR POUVOIR AJOUTER UN ADMIN
+
+Méthodes à suivre pour l'admin :
+
+Je vais récupérer la page Swagger pour lister les endpoints pertinents (auth, users, schools).
+
+
+
+Fetched https://gf-api.mfry.io/api/docs#/
+
+Je mets à jour le plan d'actions (statuts) puis je fournis la liste d'endpoints exacts et les snippets axios/Pinia + instructions de test.
+
+Starting: *Générer axios instance et actions Pinia pour admin* (2/5)
+
+Progress: j'ai lu le Swagger et mis à jour le plan. Voici ce que faire exactement pour le "school admin" — endpoints, payloads, code et tests.
+
+1) Endpoints clés (extraits du Swagger)
+- Auth: POST /api/v1/auth/signin (sign in with phone+password), POST /api/v1/auth/refresh, POST /api/v1/auth/signout
+- Schools:
+  - POST /api/v1/schools (create school)
+  - GET /api/v1/schools (list)
+  - POST /api/v1/schools/{id}/admin (create a school admin for a given school)
+  - GET /api/v1/schools/{id} (school details)
+  - PUT /api/v1/schools/{id}/suspend, PUT /api/v1/schools/{id}/activate
+- School join requests:
+  - POST /api/v1/school-join-requests (submit request)
+  - PUT /api/v1/school-join-requests/{id}/approve (approve — creates school + its admin)
+  - PUT /api/v1/school-join-requests/{id}/reject
+- Resources scoped to SCHOOL_ADMIN (examples): GET /api/v1/school-activities/mine (activities for management), GET /api/v1/schools/{id}/students, GET /api/v1/schools/{id}/parents, etc.
+
+2) Pourquoi un "admin" est nécessaire — résumé court
+- Séparation des responsabilités: l'admin global (SUPER_ADMIN) gère la plateforme (création d'écoles, approbations), le `SCHOOL_ADMIN` gère une école spécifique (élèves, activités, vendors, transactions).
+- Contrôle d'accès: réduit le blast radius (permissions limitées par école), permet des logs/audits par rôle.
+- Flux métier: approbation d'inscription d'école → création de l'école et du `SCHOOL_ADMIN` automatisée via l'endpoint d'approbation.
+
+3) Payloads et exemples d'appels (remplacer placeholders)
+- Créer un admin pour une école (requiert token admin/superadmin):
+  curl:
+  curl -X POST "https://gf-api.mfry.io/api/v1/schools/{schoolId}/admin" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer {ADMIN_TOKEN}" \
+    -d '{"phone":"+225XXXXXXXXX","email":"responsable@ecole.tld","firstName":"Prénom","lastName":"Nom","password":"TempPass!","role":"school_admin"}'
+
+- Approuver une demande d'adhésion (crée aussi l'école + admin):
+  curl -X PUT "https://gf-api.mfry.io/api/v1/school-join-requests/{requestId}/approve" \
+    -H "Authorization: Bearer {SUPER_ADMIN_TOKEN}"
+
+- Connexion (signin):
+  curl -X POST "https://gf-api.mfry.io/api/v1/auth/signin" \
+    -H "Content-Type: application/json" \
+    -d '{"phone":"+2250170959931","password":"<votre_mot_de_passe>"}'
+  (Remplacez par vos identifiants localement — ne partagez pas le mot de passe publiquement.)
+
+4) Snippets pratiques (axios + Pinia pour ce repo Nuxt)
+
+- axios instance (create `utils/api.ts`):
+  import axios from 'axios'
+
+  export const api = axios.create({
+    baseURL: process.env.API_BASE || 'https://gf-api.mfry.io/api/v1',
+    headers: { 'Content-Type': 'application/json' }
+  })
+
+  export function setAuthToken(token: string | null) {
+    if (token) api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+    else delete api.defaults.headers.common['Authorization']
+  }
+
+- Pinia `stores/auth.ts` (structure / actions importants):
+  import { defineStore } from 'pinia'
+  import { api, setAuthToken } from '~/utils/api'
+
+  export const useAuthStore = defineStore('auth', {
+    state: () => ({ token: null as string | null, user: null as any }),
+    actions: {
+      async signin(phone: string, password: string) {
+        const res = await api.post('/auth/signin', { phone, password })
+        this.token = res.data?.tokens?.access // adapter selon réponse
+        this.user = res.data?.user
+        setAuthToken(this.token)
+        localStorage.setItem('gf_token', this.token)
+      },
+      signout() {
+        this.token = null
+        this.user = null
+        setAuthToken(null)
+        localStorage.removeItem('gf_token')
+      },
+      async createSchoolAdmin(schoolId: number, adminPayload: any) {
+        // nécessite token SUPER_ADMIN ou rôle autorisé
+        return api.post(`/schools/${schoolId}/admin`, adminPayload)
+      },
+      async approveJoinRequest(requestId: number) {
+        return api.put(`/school-join-requests/${requestId}/approve`)
+      }
+    }
+  })
+
+- Exemple handler dans un composant Vue (formulaire admin creation):
+  async function submitCreateAdmin(form) {
+    const auth = useAuthStore()
+    try {
+      await auth.createSchoolAdmin(form.schoolId, {
+        phone: form.phone,
+        email: form.email,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        password: form.password
+      })
+      // success: envoyer email d'invitation ou montrer message
+    } catch (err) { /* gérer erreurs */ }
+  }
+
+5) Routage / guard (Nuxt middleware)
+- Créer `middleware/auth.ts` qui vérifie presence de token et rôle:
+  export default defineNuxtRouteMiddleware((to) => {
+    const auth = useAuthStore()
+    if (!auth.token) return navigateTo('/seConnecter')
+    if (to.meta?.requiresAdmin && auth.user?.role !== 'school_admin' && auth.user?.role !== 'super_admin') {
+      return navigateTo('/') // ou page 403
+    }
+  })
+
+6) Tests et validation
+- Tester manuellement via Swagger UI: essayer `POST /auth/signin` pour obtenir token, puis appeler `POST /schools/{id}/admin` avec `Authorization: Bearer {token}`.
+- Automatisation minimale: écrire tests d'intégration backend simulant le flow d'approbation ou scripts curl.
+- Pour utiliser vos identifiants fournis localement, exécutez la commande signin ci-dessus en remplaçant le mot de passe localement — ne collez pas ces identifiants dans des logs publics.
+
+7) Sécurité / recommandations rapides
+- Préférer `httpOnly` cookie pour tokens si possible; sinon stocker en mémoire + refresh tokens.
+- Ne jamais exposer mot de passe en clair par email — envoyez lien d'activation / changement de mot de passe.
+- Limiter endpoints `POST /schools/{id}/admin` aux rôles autorisés (SUPER_ADMIN / back-office).
+- Logger et monitorer les actions sensibles (création admin, approbation).
+
+8) Prochaine étape que je peux faire pour vous
+- Parcourir toutes les opérations Swagger et générer un fichier `snippets` avec les payloads exacts pour chaque endpoint (je peux le faire automatiquement).
+- Implémenter l'`api` utilitaire et mettre à jour `stores/auth.ts` dans votre repo (`app/plugins/pinia` exists) — voulez-vous que je l'ajoute maintenant ?
+
+Si vous voulez que je lance les actions de modification de code dans le repo, dites précisément lesquelles (ex: "Ajoute `utils/api.ts` et mets à jour `stores/auth.ts`"), et je m'en occupe.

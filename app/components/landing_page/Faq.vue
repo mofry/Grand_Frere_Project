@@ -82,10 +82,13 @@
         <footer class="border-t border-gray-200 bg-[#fafafa] pt-12 pb-20">
             <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
                 <div class="flex items-start gap-2">
-                    <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2 text-[#b67a3d]">
-                        <span class="w-6 h-6 bg-[#b67a3d] rounded-full inline-block"></span>
-                        Grand Frère
-                    </div>
+
+                    <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-16 h-16 md:w-20 md:h-20 object-contain shrink-0" />
+
+
+                    <span class="text-sm text-gray-600">© 2024 Grand Frère. Tous droits réservés.</span>
+
+ 
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24 text-sm font-medium text-gray-600">
                     <div class="flex flex-col gap-4">
@@ -109,6 +112,6 @@
                 </div>
             </div>
         </footer>
-
+     
     </div>
 </template>

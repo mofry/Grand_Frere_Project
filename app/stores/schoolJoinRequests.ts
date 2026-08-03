@@ -42,8 +42,7 @@ export const useSchoolJoinRequestsStore = defineStore('schoolJoinRequests', () =
 
   /** POST public — envoie une demande d'adhésion (aucune authentification requise). */
   const submitRequest = async (payload: SchoolJoinRequestPayload) => {
-    const api = useApi()
-    return await api('/api/v1/school-join-requests', {
+    return await $fetch('/api/school-join-requests', {
       method: 'POST',
       body: payload
     })

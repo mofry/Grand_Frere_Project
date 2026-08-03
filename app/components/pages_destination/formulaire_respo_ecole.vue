@@ -123,6 +123,13 @@ const handleSubmit = async () => {
               <label class="block text-sm font-semibold mb-2">Nombre d’élèves *</label>
               <input v-model="form.studentCount" type="number" min="1" placeholder="Ex : 450" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm" />
             </div>
+            <div>
+              <label class="block text-sm font-semibold mb-2">Commune *</label>
+              <select v-model="form.city" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm">
+                <option value="" disabled>Choisir une commune</option>
+                <option v-for="commune in communes" :key="commune" :value="commune">{{ commune }}</option>
+              </select>
+            </div>
           </div>
 
           <h3 class="text-orange-500 font-bold mb-6 border-t pt-8">Informations du demandeur</h3>
