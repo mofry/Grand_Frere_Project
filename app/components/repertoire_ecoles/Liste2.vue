@@ -2,20 +2,24 @@
   <div class="min-h-screen w-full bg-slate-50 relative overflow-hidden font-sans">
 
     <nav class="relative z-50 w-full p-6 bg-white flex justify-between items-center shadow-sm">
-      <img src="/images/Page_vidéo1/logo_complet.png" />
+                    <NuxtLink to="/" class="hover:text-orange-500 transition">
+                        <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-32" />
+                    </NuxtLink>
+       
       <div class="flex items-center space-x-6">
         <NuxtLink to="/" class="hover:text-orange-500 transition">Accueil</NuxtLink>
-        <NuxtLink to="/carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
-        <NuxtLink to="/discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
-        <NuxtLink to="/ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
-        <NuxtLink to="/parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
-        <NuxtLink to="/Fournisseurs" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
-        <NuxtLink to="/A propos" class="hover:text-orange-500 transition">A propos</NuxtLink>
-        <NuxtLink to="/FAQ" class="hover:text-orange-500 transition">FAQ</NuxtLink>
+        <NuxtLink to="/#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
+        <NuxtLink to="/#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
+        <NuxtLink to="/#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
+        <NuxtLink to="/#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
+        <NuxtLink to="/#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
+        <NuxtLink to="/#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
+        <NuxtLink to="/#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
         
-        <button class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+        <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Contactez-nous
-        </button>
+        </a>
+
 
         <div class="flex items-center gap-2 cursor-pointer group transition-all duration-300">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800 group-hover:text-orange-500 transition-colors">
@@ -173,16 +177,7 @@
       </div>
     </main>
 
-    <footer class="bg-white w-full py-16 px-24 border-t border-gray-50">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <img src="/images/Page_vidéo1/logo_complet.png" class="h-8" />
-        <div class="flex gap-16 text-xs font-bold text-gray-500 uppercase tracking-widest">
-          <span class="cursor-pointer hover:text-orange-500 transition">Écoles</span>
-          <span class="cursor-pointer hover:text-orange-500 transition">Parents</span>
-          <span class="cursor-pointer hover:text-orange-500 transition">Fournisseurs</span>
-        </div>
-      </div>
-    </footer>
+
 
   </div>
 </template>

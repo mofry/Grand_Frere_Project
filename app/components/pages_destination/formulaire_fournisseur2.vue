@@ -110,40 +110,7 @@
       </div>
     </main>
 
-    <footer class="bg-white border-t border-gray-100 mt-12 py-16">
-      <div class="max-w-6xl mx-auto px-12 flex flex-col md:flex-row justify-between items-start gap-12">
-        <div class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center text-white font-bold italic text-[10px]">G</div>
-          <span class="font-bold text-gray-800 uppercase text-xs">Grand Frère</span>
-        </div>
 
-        <div class="grid grid-cols-3 gap-24">
-          <div class="space-y-4">
-            <h4 class="font-bold text-gray-800 text-sm">Pages</h4>
-            <ul class="text-xs text-gray-500 space-y-2">
-              <li class="hover:text-orange-500 cursor-pointer text-sm">La carte</li>
-              <li class="hover:text-orange-500 cursor-pointer text-sm">Ecoles</li>
-              <li class="hover:text-orange-500 cursor-pointer text-sm">Parents</li>
-              <li class="hover:text-orange-500 cursor-pointer text-sm">Vendeurs</li>
-            </ul>
-          </div>
-          <div class="space-y-4">
-            <h4 class="font-bold text-gray-800 text-sm">Aide</h4>
-            <ul class="text-xs text-gray-500 space-y-2">
-              <li class="hover:text-orange-500 cursor-pointer text-sm">A propos</li>
-              <li class="hover:text-orange-500 cursor-pointer text-sm">FAQ</li>
-            </ul>
-          </div>
-          <div class="space-y-4">
-            <h4 class="font-bold text-gray-800 text-sm">Comptes</h4>
-            <ul class="text-xs text-gray-500 space-y-2">
-              <li class="hover:text-orange-500 cursor-pointer text-sm">S'inscrire</li>
-              <li class="hover:text-orange-500 cursor-pointer text-sm">Se connecter</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 

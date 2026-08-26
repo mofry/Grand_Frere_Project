@@ -32,17 +32,17 @@ const activites = [
       <img src="/images/Page_vidéo1/logo_complet.png" />
       <div class="flex items-center space-x-6">
         <NuxtLink to="/" class="hover:text-orange-500 transition">Accueil</NuxtLink>
-        <NuxtLink to="/carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
-        <NuxtLink to="/discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
-        <NuxtLink to="/ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
-        <NuxtLink to="/parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
-        <NuxtLink to="/Fournisseurs" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
-        <NuxtLink to="/A propos" class="hover:text-orange-500 transition">A propos</NuxtLink>
-        <NuxtLink to="/FAQ" class="hover:text-orange-500 transition">FAQ</NuxtLink>
+        <NuxtLink to="/#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
+        <NuxtLink to="/#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
+        <NuxtLink to="/#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
+        <NuxtLink to="/#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
+        <NuxtLink to="/#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
+        <NuxtLink to="/#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
+        <NuxtLink to="/#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
         
-        <button class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+        <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Contactez-nous
-        </button>
+        </a>
 
         <div class="flex items-center gap-2 cursor-pointer group transition-all duration-300">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800 group-hover:text-orange-500 transition-colors">
@@ -150,39 +150,7 @@ const activites = [
 
     </main>
 
-    <footer class="bg-white w-full py-12 px-20 border-t border-gray-100">
-      <div class="max-w-6xl mx-auto flex justify-between">
-        <div>
-          <img src="/images/Page_vidéo1/logo_complet.png" class="h-8" />
-        </div>
-        <div class="grid grid-cols-3 gap-20">
-          <div>
-            <h4 class="font-bold mb-4">Pages</h4>
-            <ul class="text-sm text-gray-500 space-y-2">
-              <li>La carte</li>
-              <li>Discovery</li>
-              <li>Écoles</li>
-              <li>Parents</li>
-              <li>Fournisseurs</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-4">Aide</h4>
-            <ul class="text-sm text-gray-500 space-y-2">
-              <li>A propos</li>
-              <li>FAQ</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-4">Comptes</h4>
-            <ul class="text-sm text-gray-500 space-y-2">
-              <li>S'inscrire</li>
-              <li>Se connecter</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+
 
   </div>
 </template>

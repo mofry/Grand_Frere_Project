@@ -55,9 +55,9 @@
 
 
                  <div class="flex justify-center mt-12">
-                    <button class="px-10 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
+                    <a href="mailto:prunel@grandfrere.com" class="px-10 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105">
                         Contactez-nous
-                    </button>
+                    </a>
                 </div>
 
 

@@ -5,7 +5,7 @@
       <div class="max-w-7xl mx-auto">
         <nav class="flex items-center justify-between mb-16">
           <div class="flex items-center gap-2">
-            <img src="/images/commun/logo_trans.png" class="tracking-tighter flex items-center gap-2">
+            <img src="/images/commun/logo_complet.png" class="tracking-tighter flex items-center gap-2">
           </div>
           
           <div class="hidden lg:flex gap-6 text-sm font-medium">
@@ -22,7 +22,7 @@
           </div>
           
           <div class="flex items-center gap-4">
-            <button class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</button>
+            <a href = "mailto:prunel@grandfrere.com" class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</a>
             <button class="flex items-center gap-2 text-sm hover:opacity-80 transition">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               Se connecter
@@ -89,39 +89,6 @@
       </div>
     </main>
 
-    <footer class="mt-24 border-t border-gray-200 bg-[#fafafa] pt-12 pb-20">
-      <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
-        
-        <div class="flex items-start gap-2">
-          <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2 text-[#b67a3d]">
-             <span class="w-6 h-6 bg-[#b67a3d] rounded-full inline-block"></span>
-             Grand Frère
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24 text-sm font-medium text-gray-600">
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-gray-900 mb-1">Pages</h4>
-            <NuxtLink to="/#carte" class="hover:text-[#b67a3d] transition">La carte</NuxtLink>
-            <NuxtLink to="/#discovery" class="hover:text-[#b67a3d] transition">Discovery</NuxtLink>
-            <NuxtLink to="/#ecoles" class="hover:text-[#b67a3d] transition">Écoles</NuxtLink>
-            <NuxtLink to="/#parents" class="hover:text-[#b67a3d] transition">Parents</NuxtLink>
-            <NuxtLink to="/#fournisseur" class="hover:text-[#b67a3d] transition">Fournisseurs</NuxtLink>
-          </div>
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-gray-900 mb-1">Aide</h4>
-            <NuxtLink to="/#apropos" class="hover:text-[#b67a3d] transition">A propos</NuxtLink>
-            <NuxtLink to="/#faq" class="hover:text-[#b67a3d] transition">FAQ</NuxtLink>
-          </div>
-          <div class="flex flex-col gap-4">
-            <h4 class="font-bold text-gray-900 mb-1">Comptes</h4>
-            <NuxtLink to="/inscription" class="hover:text-[#b67a3d] transition">S'inscrire</NuxtLink>
-            <NuxtLink to="/seConnecter" class="hover:text-[#b67a3d] transition">Se connecter</NuxtLink>
-          </div>
-        </div>
-
-      </div>
-    </footer>
 
   </div>
 </template>

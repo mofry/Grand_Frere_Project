@@ -96,19 +96,7 @@
       </div>
     </main>
 
-    <footer class="border-t border-gray-100 py-16 bg-white px-6">
-      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
-        <div class="col-span-1">
-          <div class="flex items-center gap-2 font-bold text-orange-600 italic text-sm">GF GRAND FRÈRE</div>
-        </div>
-        <div v-for="(col, title) in footerLinks" :key="title">
-          <h4 class="font-bold text-sm mb-4">{{ title }}</h4>
-          <ul class="space-y-2 text-xs text-gray-400 font-medium">
-            <li v-for="link in col" :key="link"><a href="#" class="hover:text-orange-500">{{ link }}</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+
   </div>
 </template>
 

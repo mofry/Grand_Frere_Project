@@ -109,34 +109,7 @@
       </div>
     </main>
 
-    <footer class="bg-white pt-20 pb-10 px-8 border-t border-gray-50">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-        <div class="flex items-center gap-2">
-          <img src="/images/Pages_commencez_maintenant/grand_frere.png" alt="Grand Frère Logo" class="h-6 opacity-80" />
-          <span class="font-bold text-[#C5A059] uppercase tracking-wider text-xs">Grand Frère</span>
-        </div>
 
-        <div class="grid grid-cols-3 gap-16">
-          <div class="flex flex-col gap-3">
-            <h4 class="font-bold text-xs uppercase mb-1">Pages</h4>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">La carte</a>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">Ecoles</a>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">Parents</a>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">Vendeurs</a>
-          </div>
-          <div class="flex flex-col gap-3">
-            <h4 class="font-bold text-xs uppercase mb-1">Aide</h4>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">A propos</a>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">FAQ</a>
-          </div>
-          <div class="flex flex-col gap-3">
-            <h4 class="font-bold text-xs uppercase mb-1">Comptes</h4>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">S'inscrire</a>
-            <a href="#" class="text-[11px] text-gray-500 hover:text-black">Se connecter</a>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 

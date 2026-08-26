@@ -17,8 +17,10 @@
     <header class="relative z-50 max-w-7xl mx-auto px-6 py-8 flex items-center justify-between text-white">
       <div class="flex items-center gap-2">
         <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2">
-          <span class="w-6 h-6 bg-white rounded-full inline-block"></span>
-          Grand Frère
+                    <NuxtLink to="/" class="hover:text-orange-500 transition">
+                        <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-32" />
+                    </NuxtLink>
+       
         </div>
       </div>
       
@@ -31,7 +33,8 @@
       </nav>
       
       <div class="flex items-center gap-4">
-        <NuxtLink to="#" class="border border-white/50 px-5 py-2 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</NuxtLink>
+            <a href = "mailto:prunel@grandfrere.com" class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</a>
+
         <button class="flex items-center gap-2 text-sm hover:opacity-80 transition">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           Se connecter
@@ -93,10 +96,11 @@
     <section class="relative z-20 bg-white py-20 mt-10">
       <div class="max-w-6xl mx-auto px-6">
         
-        <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-20">
-          L'app et la carte <span class="font-serif text-[#b67a3d]">GRAND FRÈRE</span> ,<br>
-          comment ça fonctionne ?
-        </h2>
+        <div class="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-5 flex items-center justify-center">
+          L'app et la carte <img src="/images/commun/logo_colored.png" class="inline-block mx-2" /> 
+  
+        </div>
+        <span class = "ext-center text-3xl md:text-4xl font-bold text-gray-900 mb-20 flex items-center justify-center">comment ça fonctionne ?</span>
 
         <div class="relative">
           

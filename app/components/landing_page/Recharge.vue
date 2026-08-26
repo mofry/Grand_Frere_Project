@@ -47,9 +47,12 @@
       </div>
 
       <div class="flex justify-center mt-20">
-        <button class="px-8 py-3 rounded-xl border border-gray-400 text-gray-700 font-semibold hover:bg-gray-100 transition-colors shadow-sm">
-          Chargez plus d'activités
-        </button>
+        <NuxtLink
+          to="/landing_app#l'application"
+          class="px-8 py-3 rounded-xl border border-gray-400 text-gray-700 font-semibold hover:bg-gray-100 transition-colors shadow-sm"
+        >
+          Téléchargez l'application
+        </NuxtLink>
       </div>
 
     </div>

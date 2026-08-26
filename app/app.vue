@@ -1,6 +1,7 @@
 <template>
   <div class="min-h-screen w-full bg-white pb-20">
     <NuxtPage />
+    <Footer />
   </div>
 </template>
 

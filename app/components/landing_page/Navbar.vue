@@ -2,8 +2,10 @@
   <div class="bg-cover bg-[url('/images/Page_app/fond_piece.png'),_url('/images/commun/gradiant.png')] relative min-h-screen bg-white flex flex-col">
     
     <nav class="sticky top-0 w-full p-6 bg-white flex justify-between items-center shadow-sm z-50">
-      <img src = "/images/commun/logo_complet.png"  />
-      
+          <NuxtLink to="/" class="hover:text-orange-500 transition">
+            <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-32" />
+          </NuxtLink>
+       
       <div class="flex items-center space-x-6">
         <NuxtLink to="#accueil" class="hover:text-orange-500 transition">Accueil</NuxtLink>
         <NuxtLink to="#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
@@ -14,9 +16,9 @@
         <NuxtLink to="#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
         <NuxtLink to="#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
         
-        <button class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+        <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Contactez-nous
-        </button>
+        </a>
 
         <NuxtLink to="/seConnecter" class="flex items-center gap-2 cursor-pointer group transition-all duration-300">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-gray-800 group-hover:text-orange-500 transition-colors">
@@ -57,14 +59,7 @@
       </div>
 
       <div class="flex flex-row gap-8 mt-12">
-        <NuxtLink 
-          to="/activites"
-          class="w-[254px] h-[50px] flex items-center justify-center rounded-[10px] 
-          font-medium border border-black text-[#333333] 
-          transition-all duration-300 hover:bg-[#333333] hover:text-white"
-        >
-          Chargez plus d'activités
-        </NuxtLink>
+  
 
         <NuxtLink 
           to="/seConnecter" 
