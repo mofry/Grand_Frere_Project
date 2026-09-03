@@ -86,14 +86,14 @@ const handleSubmit = async () => {
           </NuxtLink>
        
       <div class="flex items-center space-x-6">
-        <NuxtLink to="#accueil" class="hover:text-orange-500 transition">Accueil</NuxtLink>
-        <NuxtLink to="#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
-        <NuxtLink to="#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
-        <NuxtLink to="#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
-        <NuxtLink to="#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
-        <NuxtLink to="#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
-        <NuxtLink to="#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
-        <NuxtLink to="#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
+        <NuxtLink to="/#accueil" class="hover:text-orange-500 transition">Accueil</NuxtLink>
+        <NuxtLink to="/#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
+        <NuxtLink to="/#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
+        <NuxtLink to="/#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
+        <NuxtLink to="/#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
+        <NuxtLink to="/#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
+        <NuxtLink to="/#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
+        <NuxtLink to="/#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
         
         <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Contactez-nous
