@@ -21,12 +21,8 @@
         <button class="bg-gradient-to-r from-[#E6A57E] to-[#B06AB3] text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm">
           Contactez-nous
         </button>
-        <button class="flex items-center gap-2 text-xs font-medium text-gray-600">
-          <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center">
-            <i class="far fa-user text-[10px]"></i>
-          </div>
-          Se connecter
-        </button>
+        <!-- Bloc "Se connecter" : icône utilisateur + texte de connexion -->
+
       </div>
     </header>
 

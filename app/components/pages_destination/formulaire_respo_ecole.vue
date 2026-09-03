@@ -80,25 +80,38 @@ const handleSubmit = async () => {
 </script>
 <template>
   <div class="min-h-screen bg-white font-sans text-gray-800">
-    <header class="flex justify-between items-center px-10 py-4 shadow-sm">
-      <div class="flex items-center gap-2">
-         <span class="font-bold text-orange-600 text-xl italic">GRAND FRÈRE</span>
+    <nav class="sticky top-0 w-full p-6 bg-white flex justify-between items-center shadow-sm z-50">
+          <NuxtLink to="/" class="hover:text-orange-500 transition">
+            <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-32" />
+          </NuxtLink>
+       
+      <div class="flex items-center space-x-6">
+        <NuxtLink to="#accueil" class="hover:text-orange-500 transition">Accueil</NuxtLink>
+        <NuxtLink to="#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
+        <NuxtLink to="#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
+        <NuxtLink to="#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
+        <NuxtLink to="#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
+        <NuxtLink to="#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
+        <NuxtLink to="#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
+        <NuxtLink to="#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
+        
+        <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+          Contactez-nous
+        </a>
+
+
       </div>
-      <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="#">Accueil</a>
-        <a href="#">La carte</a>
-        <a href="#">Discovery</a>
-        <a href="#">Écoles</a>
-        <a href="#">Parents</a>
-        <a href="#">Fournisseurs</a>
-      </nav>
-      <button class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm">Contactez-nous</button>
-    </header>
+    </nav>
 
     <main class="max-w-5xl mx-auto py-16 px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-extrabold mb-4">Rejoignez le réseau d’écoles<br>partenaires <span class="italic text-orange-600">GRAND FRÈRE</span></h1>
-        <p class="text-orange-500 font-bold text-xl">Besoin de plus d’informations ?<br>Contactez-nous !</p>
+      <div class="text-center mb-12 flex flex-col items-center">
+        <h1 class="text-4xl font-extrabold mb-6">
+          Rejoignez le réseau d’écoles<br>partenaires 
+          <img src="/images/commun/logo_colored.png" alt="Logo" class="inline-block align-middle h-15 w-auto mb-1" />
+        </h1>
+        <p class="text-orange-500 font-bold text-xl">
+          Besoin de plus d’informations ?<br>Contactez-nous !
+        </p>
       </div>
 
       <div class="bg-white border border-gray-100 shadow-2xl rounded-[3rem] p-10 md:p-16">

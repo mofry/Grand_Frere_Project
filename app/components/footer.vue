@@ -29,6 +29,7 @@
                     <div class="flex flex-col gap-4">
                         <h4 class="font-bold text-gray-900 mb-1">Comptes</h4>
                         <NuxtLink to="/#inscription" class="hover:text-orange-500 transition">S'inscrire</NuxtLink>
+                        <!-- Bloc "Se connecter" : texte de connexion dans le footer -->
                         <NuxtLink to="/#connexion" class="hover:text-orange-500 transition">Se connecter</NuxtLink>
                     </div>
                 </div>

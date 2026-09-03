@@ -22,6 +22,7 @@
         <button class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] w-[220px] h-[50px] flex items-center justify-center rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Commencez maintenant
         </button>
+        <!-- Bloc "Se connecter" : icône SVG + texte de connexion -->
         <button class="flex items-center gap-2 text-sm font-semibold text-slate-700">
           <div class="w-8 h-8 border-2 border-slate-300 rounded-full flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

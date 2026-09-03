@@ -18,10 +18,8 @@
         <button class="bg-gradient-to-r from-orange-400 to-rose-500 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-lg shadow-orange-200 hover:scale-105 transition">
           Contactez-nous
         </button>
-        <button class="flex items-center gap-2 text-sm font-semibold">
-          <div class="w-6 h-6 border border-gray-400 rounded-full flex items-center justify-center text-[10px]">👤</div>
-          Se connecter
-        </button>
+        <!-- Bloc "Se connecter" : icône utilisateur + texte de connexion -->
+
       </div>
     </header>
 

@@ -23,6 +23,7 @@
         <button class="bg-[#FAD9C1] text-[#D48247] px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wide">
           Contactez-nous
         </button>
+        <!-- Bloc "Se connecter" : icône SVG + texte de connexion -->
         <button class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase">
           <span class="text-lg">👤</span> Se connecter
         </button>

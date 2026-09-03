@@ -12,6 +12,7 @@
         <a href="#">Parents</a>
         <a href="#">Fournisseurs</a>
       </nav>
+      <!-- Bloc "Se connecter" : bouton de connexion principal -->
       <NuxtLink to="/seConnecter" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm">Se connecter</NuxtLink>
     </header>
 

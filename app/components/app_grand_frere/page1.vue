@@ -1,97 +1,162 @@
 <template>
-  <div class="min-h-screen bg-white bg-cover bg-[url('/images/Page_discovery/gradiant.png'),_url('/images/Page_app/fond_piece.png')] font-sans overflow-hidden relative">
-    
-    <div class="absolute top-0 left-0 w-full h-[120vh] z-0 pointer-events-none overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-[#f29915] via-[#ea6075] to-[#e77695]"></div>
-      <div class="absolute -bottom-[20%] -right-[10%] w-[150%] h-[80%] bg-white transform -rotate-[15deg] origin-bottom-right"></div>
-    </div>
+  <div class="min-h-screen bg-white font-sans">
 
-    <div class="absolute top-0 left-0 w-full h-[120vh] z-[100] pointer-events-none overflow-hidden">
-      <img 
-        :src="imageCoin" 
-        alt="Pièces 3D" 
-        class="w-full h-full object-cover" 
-      />
-    </div>
+    <div class="relative w-full max-w-[1556px] mx-auto overflow-hidden hidden md:block" style="aspect-ratio: 1556 / 1110;">
 
-    <header class="relative z-50 max-w-7xl mx-auto px-6 py-8 flex items-center justify-between text-white">
-      <div class="flex items-center gap-2">
-        <div class="font-bold text-xl uppercase tracking-tighter flex items-center gap-2">
-                    <NuxtLink to="/" class="hover:text-orange-500 transition">
-                        <img src="/images/commun/logo_complet.png" alt="Logo Grand Frère" class="w-32" />
-                    </NuxtLink>
-       
-        </div>
+      <!-- Diagonal gradient background -->
+      <div
+        class="absolute"
+        style="left:-1.03%; top:0.09%; width:101.03%; height:100%;"
+      >
+        <svg width="100%" height="100%" viewBox="0 0 1572 1110" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 1110L1572 333.825V0H0V1110Z" fill="url(#hero_gradient)"/>
+          <defs>
+            <linearGradient id="hero_gradient" x1="603.517" y1="786" x2="382.669" y2="215.095" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFD289"/>
+              <stop offset="1" stop-color="#E2910F"/>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
-      
-      <nav class="hidden lg:flex gap-8 text-sm font-medium">
+
+      <!-- Logo -->
+      <div class="absolute flex items-center" style="left:5.40%; top:3.33%; width:11.31%; height:2.88%;">
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/b184cff916182a158fa9072a01e08a335d113179?width=76"
+          alt="Grand Frère"
+          class="h-full w-auto"
+        />
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/826308671e5627565db39d7b98854f27bf739aed?width=288"
+          alt="Grand Frère"
+          class="h-[75%] w-auto ml-1"
+        />
+      </div>
+
+      <!-- Nav -->
+      <nav
+        class="absolute hidden lg:flex items-center justify-between text-white font-medium"
+        style="left:32.26%; top:2.97%; width:34.38%; height:2.70%; font-size:clamp(0.75rem,0.96vw,0.9375rem);"
+      >
         <NuxtLink to="#l'application" class="hover:opacity-80 transition">L'application</NuxtLink>
         <NuxtLink to="#fonctionnalités" class="hover:opacity-80 transition">Fonctionnalités</NuxtLink>
-        <NuxtLink to="#avantages" class="hover:opacity-80 transition">Avantages</NuxtLink>
+        <NuxtLink to="#avantages" class="hover:opacity-80 transition">Advantages</NuxtLink>
         <NuxtLink to="#apropos" class="hover:opacity-80 transition">A propos</NuxtLink>
         <NuxtLink to="#faq" class="hover:opacity-80 transition">FAQ</NuxtLink>
       </nav>
-      
-      <div class="flex items-center gap-4">
-            <a href = "mailto:prunel@grandfrere.com" class="border border-white/50 px-4 py-1.5 rounded-full text-sm hover:bg-white/10 transition">Contactez-nous</a>
 
-        <button class="flex items-center gap-2 text-sm hover:opacity-80 transition">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          Se connecter
-        </button>
-      </div>
-    </header>
-
-    <main class="relative z-20 max-w-7xl mx-auto px-6 pt-10 pb-32 grid grid-cols-1 lg:grid-cols-2 gap-12">
-      
-      <div class="flex flex-col items-start justify-center">
-        <span class="bg-white text-gray-800 px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm mb-6">
-          L'application
-        </span>
-        
-        <h1 class="text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[1.1] tracking-tight mb-6 drop-shadow-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eiusmod incididunt
-        </h1>
-        
-        <p class="text-[#4a2b2b] font-medium text-lg max-w-lg mb-8 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eiusmod tempor incididunt, smod tempor incididunt
-        </p>
-        
-        <div class="flex flex-wrap gap-4 mb-8">
-          <button class="bg-black text-white px-5 py-2.5 rounded-xl flex items-center gap-3 hover:bg-gray-800 transition shadow-lg">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.04 2.26-.82 3.59-.73 1.55.11 2.8.74 3.65 1.91-3.09 1.81-2.56 5.86.38 7.07-.63 1.54-1.58 3.12-2.7 4.19v-.27h-.27zm-3.32-14.4c.15-1.74-1.21-3.41-2.92-3.56-.25 1.83 1.48 3.45 2.92 3.56z"/></svg>
-            <div class="text-left flex flex-col justify-center">
-              <span class="text-[9px] leading-none text-gray-300">Download on the</span>
-              <span class="text-sm font-bold leading-tight">App Store</span>
-            </div>
-          </button>
-          
-          <button class="bg-black text-white px-5 py-2.5 rounded-xl flex items-center gap-3 hover:bg-gray-800 transition shadow-lg">
-            <svg class="w-6 h-6" viewBox="0 0 512 512"><path fill="#fff" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-            <div class="text-left flex flex-col justify-center">
-              <span class="text-[9px] leading-none text-gray-300">GET IT ON</span>
-              <span class="text-sm font-bold leading-tight">Google Play</span>
-            </div>
-          </button>
-        </div>
-        
-        <button class="bg-[#1a1a1a] text-white px-8 py-4 rounded-xl font-bold shadow-xl hover:bg-black hover:scale-105 transition">
-          Télécharger l'App
-        </button>
+      <!-- Pill button -->
+      <div
+        class="absolute rounded-[10px] flex items-center justify-center border border-solid"
+        style="left:5.33%; top:16.67%; width:8.74%; height:3.51%; border-color:#985194; background:linear-gradient(90deg, #FFF4E3 0%, #FFDFFD 100%);"
+      >
+        <span
+          style="font-family:Montserrat, -apple-system, Roboto, Helvetica, sans-serif; font-weight:500; font-size:clamp(0.75rem,0.96vw,0.9375rem); color:#252019;"
+        >L'application</span>
       </div>
 
-      <div class="relative min-h-[500px] hidden md:flex justify-center items-center">
-        <img src="/images/Page_app/phone.png" 
-          alt="Téléphone App" 
-          class="absolute top-0 right-[25%] w-[320px] z-10 drop-shadow-2xl" 
+      <!-- Heading -->
+      <h1
+        class="absolute font-bold text-white"
+        style="left:5.33%; top:24.14%; width:59.38%; height:20.54%; font-family:'Nirmala Text', -apple-system, Roboto, Helvetica, sans-serif; font-size:clamp(1.75rem,4.82vw,4.6875rem); line-height:0.91;"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eiusmod incididunt
+      </h1>
+
+      <!-- Paragraph -->
+      <p
+        class="absolute"
+        style="left:5.33%; top:47.75%; width:39.20%; height:5.05%; font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif; font-weight:500; font-size:clamp(0.875rem,1.29vw,1.25rem); line-height:1.25; color:#252019;"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eiusmod tempor incididunt, smod tempor incididunt
+      </p>
+
+      <!-- Store badges -->
+      <a
+        href="#"
+        class="absolute block"
+        style="left:5.40%; top:56.85%; width:9.25%; height:4.32%;"
+      >
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/4ee73a1ed7c3ce83e369298939722694892a0ff8?width=288"
+          alt="Télécharger sur l'App Store"
+          class="w-full h-full rounded-[10px]"
         />
-        
-        <img src="/images/Page_app/carte.png" 
-          alt="Carte Bancaire" 
-          class="absolute bottom-[5%] -right-[5%] w-[380px] z-20 transform rotate-[15deg] drop-shadow-2xl" 
+      </a>
+      <a
+        href="#"
+        class="absolute block"
+        style="left:15.36%; top:56.85%; width:10.09%; height:4.32%;"
+      >
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/8f1b102f9c2bcbd720218527739dc48813021dc1?width=314"
+          alt="Disponible sur Google Play"
+          class="w-full h-full rounded-[10px]"
         />
+      </a>
+
+      <!-- Télécharger l'App button -->
+      <a
+        href="#"
+        class="absolute rounded-[10px] flex items-center justify-center bg-[#252019] text-white font-semibold"
+        style="left:5.40%; top:64.23%; width:16.97%; height:4.50%; font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif; font-size:clamp(0.75rem,1.03vw,1rem); box-shadow:6px 0 12px 0 rgba(152,81,148,0.10), 2px -15px 25px 0 #000 inset, 0 3px 3px 0 rgba(255,232,237,0.35) inset, -6px 0 12px 0 rgba(177,123,36,0.10);"
+      >
+        Télécharger l&lsquo;App
+      </a>
+
+      <!-- Decorative pattern shape behind phone -->
+      <div class="absolute" style="left:67.29%; top:36.22%; width:28.99%; height:43.42%; filter:drop-shadow(0 0 8px rgba(0,0,0,0.25));">
+        <svg width="100%" height="100%" viewBox="0 0 451 482" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="rect160_gradient" x1="0" y1="0" x2="451" y2="482" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFD289"/>
+              <stop offset="1" stop-color="#985194"/>
+            </linearGradient>
+          </defs>
+          <path d="M225.673 447.391C212.965 464.001 188.622 465.832 173.573 451.31L45.2759 327.508C32.7525 315.423 31.0105 295.973 41.1873 281.855L222.898 29.7775C234.584 13.5662 257.449 10.414 273.085 22.8584L418.632 138.691C433.552 150.566 436.221 172.2 424.634 187.345L225.673 447.391Z" fill="url(#rect160_gradient)"/>
+        </svg>
       </div>
-    </main>
+
+      <!-- Phone mockup -->
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/55ee70c9ca9ada013221b91b54e8bbbc19e60610?width=882"
+        alt="Application Grand Frère"
+        class="absolute object-contain"
+        style="left:55.98%; top:13.33%; width:28.34%; height:73.06%;"
+      />
+
+      <!-- Floating decorative illustrations -->
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/d210326103a5e8a0f0492c07ca21cf660d984d0a?width=406"
+        alt=""
+        class="absolute object-contain"
+        style="left:-6.68%; top:6.85%; width:13.05%; height:16.85%; transform:rotate(-24.819deg); filter:blur(4.95px);"
+      />
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/f1ba52aecb41540be01a71ce119341e06c1db5a9?width=216"
+        alt=""
+        class="absolute object-contain"
+        style="left:40.94%; top:29.19%; width:6.94%; height:9.01%; transform:rotate(-21.409deg); filter:blur(2.95px);"
+      />
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/ed2a87f55e4818495331aeb056891824ac659807?width=274"
+        alt=""
+        class="absolute object-contain"
+        style="left:44.73%; top:46.04%; width:8.81%; height:12.34%; transform:rotate(25.082deg);"
+      />
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/7a889f659d12534127a3f492788d63908e58f568?width=590"
+        alt=""
+        class="absolute object-contain"
+        style="left:29.11%; top:52.16%; width:18.96%; height:24.59%; transform:rotate(-19.689deg);"
+      />
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/1a45600f0be6c946a2c90a2840199906d4f5fcd9?width=406"
+        alt=""
+        class="absolute object-contain"
+        style="left:89.27%; top:5.05%; width:13.05%; height:16.85%; transform:rotate(-24.819deg); filter:blur(4.95px);"
+      />
+    </div>
 
     <section class="relative z-20 bg-white py-20 mt-10">
       <div class="max-w-6xl mx-auto px-6">
@@ -132,8 +197,4 @@
 </template>
 
 <script setup>
-// Remplace ces chemins par ceux de tes propres images
-const imageCoin = '/images/Page_app/bg_coin.png'
-const imageTelephone = '/images/ton_telephone.png'; 
-const imageCarte = '/images/ta_carte.png';
 </script>

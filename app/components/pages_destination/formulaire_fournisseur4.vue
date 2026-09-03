@@ -25,15 +25,8 @@
         <button class="bg-gradient-to-r from-[#E67E22] to-[#BC4E9C] text-white px-6 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition">
           Contactez-nous
         </button>
-        <button class="flex items-center gap-2 text-sm font-medium text-gray-700">
-          <div class="w-8 h-8 border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </div>
-          
-          Se connecter
-        </button>
+        <!-- Bloc "Se connecter" : icône SVG + texte de connexion -->
+
       </div>
     </nav>
 
