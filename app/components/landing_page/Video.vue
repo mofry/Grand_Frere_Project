@@ -121,7 +121,7 @@ const handleScroll = () => {
     </div>
 
     <NuxtLink 
-      to="/Commencez" 
+      to="/commencez_now" 
       class="mt-[50px] w-[295px] h-[60px] bg-gradient-to-r from-[#e67e22] to-[#a55eea] flex items-center justify-center rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition"
     >
       Commencez maintenant

@@ -34,16 +34,29 @@
       </div>
 
       <!-- Nav -->
-      <nav
-        class="absolute hidden lg:flex items-center justify-between text-white font-medium"
-        style="left:32.26%; top:2.97%; width:34.38%; height:2.70%; font-size:clamp(0.75rem,0.96vw,0.9375rem);"
-      >
-        <NuxtLink to="#l'application" class="hover:opacity-80 transition">L'application</NuxtLink>
-        <NuxtLink to="#fonctionnalités" class="hover:opacity-80 transition">Fonctionnalités</NuxtLink>
-        <NuxtLink to="#avantages" class="hover:opacity-80 transition">Advantages</NuxtLink>
-        <NuxtLink to="#apropos" class="hover:opacity-80 transition">A propos</NuxtLink>
-        <NuxtLink to="#faq" class="hover:opacity-80 transition">FAQ</NuxtLink>
-      </nav>
+<!-- Nav -->
+<nav class="absolute top-6 left-0 w-full hidden lg:flex items-center justify-between px-12 z-50 text-white font-medium">
+  
+  <!-- Espace vide à gauche (ou emplacement pour un éventuel Logo) -->
+  <div class="w-48"></div>
+
+  <!-- Groupe des liens (centrés) -->
+  <div class="flex items-center gap-8 text-[15px]">
+    <NuxtLink to="#l'application" class="hover:opacity-80 transition">L'application</NuxtLink>
+    <NuxtLink to="#fonctionnalités" class="hover:opacity-80 transition">Fonctionnalités</NuxtLink>
+    <NuxtLink to="#avantages" class="hover:opacity-80 transition">Avantages</NuxtLink>
+    <NuxtLink to="#apropos" class="hover:opacity-80 transition">À propos</NuxtLink>
+    <NuxtLink to="#faq" class="hover:opacity-80 transition">FAQ</NuxtLink>
+  </div>
+
+  <!-- Bouton Contact (aligné à droite) -->
+  <div class="w-48 flex justify-end">
+    <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-6 py-2.5 rounded-xl text-white font-bold shadow-md hover:opacity-90 transition whitespace-nowrap">
+      Contactez-nous
+    </a>
+  </div>
+
+</nav>
 
       <!-- Pill button -->
       <div
