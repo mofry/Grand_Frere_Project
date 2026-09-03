@@ -24,9 +24,7 @@
           Contactez-nous
         </button>
         <!-- Bloc "Se connecter" : icône SVG + texte de connexion -->
-        <button class="flex items-center gap-2 text-xs font-bold text-gray-500 uppercase">
-          <span class="text-lg">👤</span> Se connecter
-        </button>
+
       </div>
     </nav>
 
@@ -35,7 +33,7 @@
         <h1 class="text-[40px] leading-[1.1] font-black text-gray-800 mb-4">
           Proposez vos produits aux<br />
           écoles via notre solution<br />
-          <span class="uppercase tracking-[0.2em] text-3xl">Grand Frère</span>
+          <img src="/images/commun/logo_colored.png" alt="Logo" class="inline-block align-middle h-15 w-auto mb-1" />
         </h1>
       </div>
 

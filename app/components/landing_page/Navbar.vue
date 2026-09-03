@@ -54,7 +54,7 @@
 
 
         <NuxtLink 
-          to="/seConnecter" 
+          to="/commencez_now" 
           class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] w-[254px] h-[50px] flex items-center justify-center rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition"
         >
           Commencez maintenant

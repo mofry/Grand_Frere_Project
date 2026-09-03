@@ -2,17 +2,20 @@
   <div class="min-h-screen bg-white font-sans text-gray-800">
     <header class="flex items-center justify-between px-6 py-4 border-b border-gray-50">
       <div class="flex items-center gap-2 font-black text-orange-600 italic tracking-tighter">
-        <span class="text-xl">GF</span> GRAND FRÈRE
+
+            <img src="/images/commun/logo_complet.png" class="tracking-tighter flex items-center gap-2">
+
+          
       </div>
       <nav class="hidden lg:flex gap-6 text-sm font-medium text-gray-600">
-        <a href="#" class="hover:text-orange-500 transition">Accueil</a>
-        <a href="#" class="hover:text-orange-500 transition">La carte</a>
-        <a href="#" class="hover:text-orange-500 transition">Discovery</a>
-        <a href="#" class="hover:text-orange-500 transition">Écoles</a>
-        <a href="#" class="hover:text-orange-500 transition">Parents</a>
-        <a href="#" class="hover:text-orange-500 transition">Fournisseurs</a>
-        <a href="#" class="hover:text-orange-500 transition">A propos</a>
-        <a href="#" class="hover:text-orange-500 transition">FAQ</a>
+        <NuxtLink to="/#accueil" class="hover:text-orange-500 transition">Accueil</NuxtLink>
+        <NuxtLink to="/#carte" class="hover:text-orange-500 transition">La carte</NuxtLink>
+        <NuxtLink to="/#discovery" class="hover:text-orange-500 transition">Discovery</NuxtLink>
+        <NuxtLink to="/#ecoles" class="hover:text-orange-500 transition">Écoles</NuxtLink>
+        <NuxtLink to="/#parents" class="hover:text-orange-500 transition">Parents</NuxtLink>
+        <NuxtLink to="/#fournisseur" class="hover:text-orange-500 transition">Fournisseurs</NuxtLink>
+        <NuxtLink to="/#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
+        <NuxtLink to="/#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
       </nav>
       <div class="flex items-center gap-4">
         <button class="bg-gradient-to-r from-orange-400 to-rose-500 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-lg shadow-orange-200 hover:scale-105 transition">
