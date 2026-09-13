@@ -116,6 +116,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useAuthStore } from '~/stores/auth'
+import { homeForRole } from '~/utils/roles'
 import { useRouter } from '#app'
 
 const authStore = useAuthStore()
@@ -137,7 +138,19 @@ const handleLogin = async () => {
     }
 
     await authStore.signin(phone.value, password.value)
-    await router.push('/demandes-ecoles')
+
+    // Le rôle est dérivé du token : il n'est lisible qu'une fois signin() terminé.
+    const destination = homeForRole(authStore.role)
+    if (!destination) {
+      // Parents et élèves n'ont pas d'espace web : on ne les laisse pas
+      // connectés sur un site qui n'a rien à leur montrer.
+      await authStore.logout()
+      throw new Error(
+        "Ce compte n'a pas d'espace sur le site web. Utilisez l'application Grand Frère."
+      )
+    }
+
+    await router.push(destination)
   } catch (error) {
     errorMessage.value =
       error?.data?.message || error?.message || 'Numéro ou mot de passe incorrect'

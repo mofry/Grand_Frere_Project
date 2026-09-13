@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import { isKnownRole, type UserRole } from '~/utils/roles'
 
 const ACCESS_KEY = 'grand_frere_access_token'
 const REFRESH_KEY = 'grand_frere_refresh_token'
@@ -27,8 +28,8 @@ export const useAuthStore = defineStore('auth', () => {
     if (!token) return null
     try {
       const parts = token.split('.')
-      if (parts.length < 2) return null
       const payload = parts[1]
+      if (!payload) return null
       // replace URL-safe base64 chars
       const base64 = payload.replace(/-/g, '+').replace(/_/g, '/')
       const json = decodeURIComponent(
@@ -43,10 +44,11 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  const role = computed(() => {
+  const role = computed<UserRole | null>(() => {
     const payload = decodeJwtPayload(accessToken.value)
     if (!payload) return null
-    return payload.role ?? payload.roles ?? null
+    const value = payload.role ?? payload.roles ?? null
+    return isKnownRole(value) ? value : null
   })
 
   // Conservé pour la compatibilité avec le code existant (dashboard, etc.)
@@ -54,12 +56,17 @@ export const useAuthStore = defineStore('auth', () => {
 
   const config = () => useRuntimeConfig().public.apiBase as string
 
-  const extractTokens = (res: TokenResponse) => {
+  const extractTokens = (
+    res: TokenResponse
+  ): { accessToken: string; refreshToken?: string } => {
     const tokens = res?.data ?? res
     if (!tokens?.accessToken) {
       throw new Error('Réponse inattendue du serveur (aucun token reçu)')
     }
-    return tokens
+    return {
+      accessToken: tokens.accessToken,
+      refreshToken: tokens.refreshToken
+    }
   }
 
   const persist = () => {
@@ -101,8 +108,7 @@ export const useAuthStore = defineStore('auth', () => {
     persist()
   }
 
-  /** Rafraîchit l'access token à partir du refresh token. */
-  const refresh = async () => {
+  const performRefresh = async () => {
     if (!refreshToken.value) throw new Error('Aucun refresh token disponible')
     const res = await $fetch<TokenResponse>('/api/auth/refresh', {
       method: 'POST',
@@ -112,6 +118,24 @@ export const useAuthStore = defineStore('auth', () => {
     accessToken.value = tokens.accessToken
     refreshToken.value = tokens.refreshToken ?? refreshToken.value
     persist()
+  }
+
+  /**
+   * Rafraîchissement en cours, s'il y en a un.
+   * L'API révoque le refresh token à chaque usage : deux appels concurrents
+   * feraient échouer le second et déconnecteraient l'utilisateur à tort.
+   * Les appels simultanés partagent donc la même promesse.
+   */
+  let pendingRefresh: Promise<void> | null = null
+
+  /** Rafraîchit l'access token à partir du refresh token. */
+  const refresh = () => {
+    if (!pendingRefresh) {
+      pendingRefresh = performRefresh().finally(() => {
+        pendingRefresh = null
+      })
+    }
+    return pendingRefresh
   }
 
   const logout = async () => {
@@ -142,6 +166,7 @@ export const useAuthStore = defineStore('auth', () => {
     initializeAuth,
     signin,
     refresh,
+    clear,
     logout
   }
 })

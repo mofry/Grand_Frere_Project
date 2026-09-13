@@ -177,7 +177,9 @@ devient `<RepertoireEcolesListeEcole />`, et `Liste2.vue` devient
 
 Les appels passent par `useApi()`, cohérent avec le reste du projet. Ce client ajoute
 un `Authorization` quand l'utilisateur est connecté ; les routes publiques n'ayant
-pas de garde, l'en-tête est simplement ignoré.
+pas de garde, l'en-tête est simplement ignoré. Depuis l'ajout du renouvellement
+automatique de token, `useApi()` réessaie une fois sur `401` après un refresh — sans
+effet ici, les routes du répertoire ne renvoyant jamais `401`.
 
 ### La liste — `Liste_Ecole.vue`
 
