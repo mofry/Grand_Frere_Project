@@ -30,9 +30,8 @@
       <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight">
         Proposez vos produits aux écoles via notre solution
       </h1>
-      <h2 class="text-3xl md:text-4xl font-black tracking-[0.2em] text-gray-900 mt-2 uppercase">
-        GRAND FRÈRE
-      </h2>
+      
+
     </div>
 
     <main class="max-w-4xl mx-auto px-4 pb-20">

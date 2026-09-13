@@ -1,12 +1,14 @@
 <script setup lang="ts">
-// Pas besoin d'importer les composants, Nuxt le fait pour toi !
+/**
+ * Ancienne fiche d'école sans identifiant.
+ * Les fiches vivent désormais sur /ecoles/[id] : on renvoie au répertoire,
+ * seul endroit où choisir une école.
+ */
+definePageMeta({
+  redirect: '/repertoire_ecoles'
+})
 </script>
 
 <template>
-  <div class="repertoire_ecoles">
-
-
-    <RepertoireEcolesListe2 />
-   
-  </div>
+  <div />
 </template>
