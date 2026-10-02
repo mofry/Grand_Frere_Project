@@ -34,9 +34,14 @@
           <p class="text-xl md:text-2xl font-medium mb-8">
             Explore les divers univers de cartes <span class="font-bold">GRAND FRÈRE</span>
           </p>
-          <button class="bg-white text-orange-500 px-6 py-3 rounded-full font-bold shadow-lg inline-flex items-center gap-2 hover:scale-105 transition">
+          <button
+            @click="choisirHistoireAuHasard"
+            class="bg-white text-orange-500 px-6 py-3 rounded-full font-bold shadow-lg inline-flex items-center gap-2 hover:scale-105 transition"
+          >
             Une histoire au Hasard
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
           </button>
         </div>
       </div>
@@ -114,6 +119,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { navigateTo } from '#app' 
 
 // IMAGES
 const img_makeba = '/images/Page_discovery/makeba3.png'
@@ -123,7 +129,7 @@ const img_sport = '/images/Page_discovery/sport.png'
 const img_femmes = '/images/Page_discovery/femmes.png' 
 const img_soyinka = '/images/Page_discovery/soyinka_top.png' 
 const img_litterature = '/images/Page_discovery/litterature.png' 
-const img_tourisme = '/images/Page_discovery/tourisme.png' 
+const img_tourisme = '/images/Page_discovery/tourism_card.png' 
 
 // --- LOGIQUE DES LIKES ---
 
@@ -152,19 +158,34 @@ const toggleLike = (item) => {
 
 // DONNÉES REACTIVES
 const favoris = ref([
-  { id: 1, image: img_basilique, date: '20.05.2025', likes: 1200, hasLiked: false },
-  { id: 2, image: img_makeba, date: '20.05.2025', likes: 850, hasLiked: false },
-  { id: 3, image: img_talou, date: '20.05.2025', likes: 4300, hasLiked: true },
-  { id: 4, image: img_soyinka, date: '20.05.2025', likes: 95, hasLiked: false },
+  { id: 1, image: img_basilique, date: '20.05.2025', likes: 0, hasLiked: false },
+  { id: 2, image: img_makeba, date: '20.05.2025', likes: 0, hasLiked: false },
+  { id: 3, image: img_talou, date: '20.05.2025', likes: 0, hasLiked: false },
+  { id: 4, image: img_soyinka, date: '20.05.2025', likes: 0, hasLiked: false },
 ])
 
+const stories = [
+  { id: 1, title: 'Makeba', slug: '/basilique' },
+  { id: 2, title: 'Basilique', slug: '/ecole' },
+  { id: 3, title: 'Talou', slug: '/tourisme' },
+  { id: 4, title: 'Soyinka', slug: '/decouverte' }
+]
+
+const choisirHistoireAuHasard = () => {
+  const index = Math.floor(Math.random() * stories.length)
+  histoireRandom.value = stories[index]
+
+  if (histoireRandom.value?.slug) {
+    navigateTo(histoireRandom.value.slug)
+  }
+}
 // =============================================================
 // AJOUT DE LA PROPRIÉTÉ 'link' POUR GERER LA NAVIGATION
 // =============================================================
 const categories = ref([
-  { id: 1, image: img_femmes, likes: 540, hasLiked: false, link: '/categorie/femmes' },
-  { id: 2, image: img_litterature, likes: 1200, hasLiked: false, link: '/categorie/litterature' },
-  { id: 3, image: img_sport, likes: 890, hasLiked: false, link: '/categorie/sport' },
-  { id: 4, image: img_tourisme, likes: 2100, hasLiked: false, link: '/tourisme' }, // <-- Ton lien demandé
+  { id: 1, image: img_femmes, likes: 0, hasLiked: false, link: '/categorie/femmes' },
+  { id: 2, image: img_litterature, likes: 0, hasLiked: false, link: '/categorie/litterature' },
+  { id: 3, image: img_sport, likes: 0, hasLiked: false, link: '/categorie/sport' },
+  { id: 4, image: img_tourisme, likes: 0, hasLiked: false, link: '/tourisme' }, // <-- Ton lien demandé
 ])
 </script>

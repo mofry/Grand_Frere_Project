@@ -51,7 +51,7 @@
 
   <!-- Bouton Contact (aligné à droite) -->
   <div class="w-48 flex justify-end">
-    <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-6 py-2.5 rounded-xl text-white font-bold shadow-md hover:opacity-90 transition whitespace-nowrap">
+    <a href="mailto:contact.grandfrere@gmail.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-6 py-2.5 rounded-xl text-white font-bold shadow-md hover:opacity-90 transition whitespace-nowrap">
       Contactez-nous
     </a>
   </div>

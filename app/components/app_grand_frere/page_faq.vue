@@ -20,7 +20,7 @@
 
         <!-- FAQ 1 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=Comment%20fonctionne%20la%20carte%20pour%20les%20élèves%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=Comment%20fonctionne%20la%20carte%20pour%20les%20élèves%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] border-2 rounded-xl cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">
@@ -31,7 +31,7 @@
 
         <!-- FAQ 2 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=Comment%20puis-je%20recharger%20le%20compte%20de%20mon%20enfant%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=Comment%20puis-je%20recharger%20le%20compte%20de%20mon%20enfant%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] border-2 rounded-xl cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">
@@ -42,7 +42,7 @@
 
         <!-- FAQ 3 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=La%20carte%20peut-elle%20être%20utilisée%20pour%20autre%20chose%20que%20les%20repas%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=La%20carte%20peut-elle%20être%20utilisée%20pour%20autre%20chose%20que%20les%20repas%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] border-2 rounded-xl cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">
@@ -53,7 +53,7 @@
 
         <!-- FAQ 4 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=Que%20faire%20si%20la%20carte%20de%20mon%20enfant%20est%20perdue%20ou%20volée%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=Que%20faire%20si%20la%20carte%20de%20mon%20enfant%20est%20perdue%20ou%20volée%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] border-2 rounded-xl cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">
@@ -64,7 +64,7 @@
 
         <!-- FAQ 5 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=Y%20a-t-il%20des%20frais%20pour%20les%20parents%20ou%20pour%20l’école%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=Y%20a-t-il%20des%20frais%20pour%20les%20parents%20ou%20pour%20l’école%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] border-2 rounded-xl cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">
@@ -75,7 +75,7 @@
 
         <!-- FAQ 6 -->
         <a 
-          href="mailto:contact@votre-entreprise.com?subject=Demande%20d'aide&body=Comment%20sont%20sélectionnés%20les%20vendeurs%20ou%20points%20de%20restauration%20acceptant%20la%20carte%20?" 
+          href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&body=Comment%20sont%20sélectionnés%20les%20vendeurs%20ou%20points%20de%20restauration%20acceptant%20la%20carte%20?"
           class="block py-3 px-4 filter drop-shadow-lg bg-[#FDFDFD] border-[#C0C0C0] shadow-inner-xl border-2 rounded-xl mb-32 cursor-pointer hover:bg-gray-50 transition"
         >
           <div class="flex items-center justify-between">

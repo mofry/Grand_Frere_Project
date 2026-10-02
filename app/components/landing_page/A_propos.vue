@@ -67,7 +67,7 @@
 
         <div class="flex justify-center mt-12">
           <a 
-            href="mailto:prunel@grandfrere.com?subject=Demande%20d'aide&"
+            href="mailto:contact.grandfrere@gmail.com?subject=Demande%20d'aide&"
             class="px-10 py-3.5 rounded-xl bg-gradient-to-r from-[#d97706] to-[#a21caf] text-white font-bold shadow-lg hover:opacity-90 transition-all hover:scale-105"
           >
             Contactez-nous
@@ -78,5 +78,4 @@
     </div>
   </div>
 </template>
-
 

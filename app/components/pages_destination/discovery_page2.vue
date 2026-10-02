@@ -122,21 +122,13 @@ const toggleLike = (story) => {
   }
 }
 
+
 // Les données des cartes
 const stories = ref([
   { id: 1, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba, link: '/makeba' },
   { id: 2, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou, link: '/sport/talou' },
   { id: 3, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2', link: '/litterature/soyinka' }, 
   { id: 4, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique, link: '/basilique' }, // <-- Ton lien spécifique ici !
-  
-  { id: 5, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba, link: '/makeba' },
-  { id: 6, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou, link: '/sport/talou' },
-  { id: 7, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2', link: '/litterature/soyinka' }, 
-  { id: 8, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique, link: '/basilique' },
 
-  { id: 9, category: 'Femmes', title: 'Miriam Makeba', subtitle: 'Grammy awards 1966', date: '20.05.2025', likes: 5000, hasLiked: false, views: '72K', image: img_makeba, link: '/makeba' },
-  { id: 10, category: 'Sport', title: 'Sprint', subtitle: 'Ta Lou', date: '20.05.2025', likes: 1400, hasLiked: true, views: '14K', image: img_talou, link: '/sport/talou' },
-  { id: 11, category: 'Littérature', title: 'Wole Soyinka', subtitle: 'Prix Nobel', date: '20.05.2025', likes: 1000, hasLiked: false, views: '2.5K', image: img_soyinka, customClass: 'ring-4 ring-purple-500 ring-offset-2', link: '/litterature/soyinka' }, 
-  { id: 12, category: 'Tourisme', title: 'Basilique Notre Dame...', subtitle: 'Joyau Architectural Mondial', date: '20.05.2025', likes: 5000, hasLiked: false, views: '12.5K', image: img_basilique, link: '/basilique' },
 ])
 </script>

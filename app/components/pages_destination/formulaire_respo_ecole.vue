@@ -95,7 +95,7 @@ const handleSubmit = async () => {
         <NuxtLink to="/#apropos" class="hover:text-orange-500 transition">A propos</NuxtLink>
         <NuxtLink to="/#faq" class="hover:text-orange-500 transition">FAQ</NuxtLink>
         
-        <a href="mailto:prunel@grandfrere.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
+        <a href="mailto:contact.grandfrere@gmail.com" class="bg-gradient-to-r from-[#e67e22] to-[#a55eea] px-[30px] py-[10px] rounded-[12px] text-white font-bold shadow-md hover:opacity-90 transition">
           Contactez-nous
         </a>
 
