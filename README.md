@@ -1,6 +1,13 @@
 # Grand Frère Project
 
-Grand Frère Project is a modern Nuxt 4 + Vue web platform built to support the discovery, enrollment, and management of schools and educational service providers. The platform combines a polished landing experience with structured school directories, supplier and offer flows, user authentication, and backend API endpoints that power the core operational journey.
+Schools and families often face the same challenges:
+
+cash-based student spending is hard to track
+parents do not always know how much is being spent
+schools need a safer and more transparent way to manage meal budgets
+students need a simpler way to access their meal allowance without friction
+
+Grand Frère addresses these issues by proposing a digital payment experience centered on transparency, control, and security.
 
 ## Project overview
 
