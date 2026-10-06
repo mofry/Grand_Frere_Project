@@ -135,4 +135,4 @@ Grand_Frere_Project/
 
 This repository is structured as a Nuxt 4 application with a Vue-based frontend and lightweight server endpoints. It is designed to unify the education ecosystem around school discovery, transparency, and secure financial management.
 
-Homepage: https://grand-frere-project.vercel.app
+Homepage: [https://grand-frere-project.vercel.app](https://grand-frere-project-git-mainbranch-gf-0543.vercel.app)
