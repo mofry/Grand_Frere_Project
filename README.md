@@ -1,28 +1,31 @@
 # Grand Frère Project
 
-Schools and families often face the same challenges:
+## About Grand Frère
 
-- cash-based student spending is hard to track
-- parents do not always know how much is being spent
-- schools need a safer and more transparent way to manage meal budgets
-- students need a simpler way to access their meal allowance without friction
+Grand Frère is a digital payment platform that transforms how schools and families manage student allowances and meal budgets. By centralizing transparency, control, and security, we simplify the educational ecosystem for schools, parents, and students alike.
 
-Grand Frère addresses these issues by proposing a digital payment experience centered on transparency, control, and security.
+## The Problem We Solve
 
-## Project overview
+Many schools and families still rely on manual or fragmented systems for managing student allowances and related services, leading to:
 
-This repository contains a complete digital experience for a school-focused ecosystem. It includes public-facing marketing pages, school and parent discovery interfaces, dashboard views for management tasks, and data-driven workflows for accounts, school join requests, and offers. The platform brings together all the stakeholders involved in the education ecosystem into a single, structured digital experience.
+- Poor visibility into how funds are used
+- Difficult tracking of purchases and allocations
+- Limited transparency for parents
+- Operational friction for schools and administrators
+- Cash-based spending that's hard to track
+- Students lacking a simple, frictionless way to access their meal allowance
 
-## Problem addressed
+## Current Features
 
-Many schools and families still rely on manual or fragmented systems for managing student allowances and related services. This leads to:
+This repository contains a complete digital experience for a school-focused ecosystem with the following launched features:
 
-- poor visibility into how funds are used,
-- difficult tracking of purchases and allocations,
-- limited transparency for parents,
-- operational friction for schools and administrators.
-
-Grand Frère Project solves this by offering a central digital solution that allows schools to manage meal budgets more safely, gives parents better visibility, and provides a cleaner, more controlled financial flow for students.
+- Public-facing marketing pages
+- School discovery interface
+- Parent discovery interface
+- Dashboard views for management and administration
+- User account management
+- School directory and school detail pages
+- Offers and partnerships pages
 
 ## Project hierarchy
 
@@ -127,6 +130,6 @@ Grand_Frere_Project/
 
 ## Notes
 
-This repository is structured as a Nuxt 4 application with a Vue-based frontend and lightweight server endpoints. It is designed to unify the education ecosystem around school discovery, transparency, and more secure financial management.
+This repository is structured as a Nuxt 4 application with a Vue-based frontend and lightweight server endpoints. It is designed to unify the education ecosystem around school discovery, transparency, and secure financial management.
 
 Homepage: https://grand-frere-project.vercel.app
