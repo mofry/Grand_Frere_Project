@@ -17,16 +17,19 @@ Many schools and families still rely on manual or fragmented systems for managin
 
 ## Current Features
 
-This repository contains a complete digital experience for a school-focused ecosystem with the following launched features:
 
-- Public-facing marketing pages
-- School discovery interface
-- Parent discovery interface
-- Dashboard views for management and administration
-- User account management
-- School directory and school detail pages
-- Offers and partnerships pages
 
+The current version of the platform encompasses a complete multi-stakeholder ecosystem with the following key modules:
+
+
+- **Grand Frère Card Showcase:** Dedicated presentation pages detailing the features, benefits, and security aspects of the student card.
+- **Usage Guidelines:** Clear, step-by-step instructions explaining how students and parents use the card on a daily basis.
+- **Vendor Registration Workflow:** An onboarding interface allowing local merchants, food vendors, and suppliers to register and propose their services to partner schools.
+- **Secure Authentication:** Dedicated login portal for school principals and administrative staff.
+- **Real-Time Transaction Dashboard:** A comprehensive monitoring interface tracking all financial flows and purchases made within the school premises.
+- **On-Campus Vendor Management:** Tools for schools to oversee, validate, and manage all active suppliers and vendors operating inside the establishment.
+
+  
 ## Project hierarchy
 
 ```text
